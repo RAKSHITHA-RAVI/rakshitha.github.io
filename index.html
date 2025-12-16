@@ -63,73 +63,123 @@
     nav ul li a { color: var(--subtext); font-size: 0.95rem; }
     nav ul li a:hover { color: var(--text); }
 
-    /* HERO -------------------------------------------------------- */
-    #hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6rem 0 4rem;
-      gap: 2rem;
-    }
+    <!-- ====== HERO ====== -->
+<section id="home">
+  <div class="hero">
 
-    #hero img {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent);
-      box-shadow: 0 0 25px rgba(90, 165, 255, 0.3);
-    }
+    <!-- LEFT SIDE: TEXT INTRO -->
+    <div>
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        Open to Internship & Full-Time Roles · May 2026 Graduate
+      </div>
 
-    #hero .left h1 {
-      font-size: 2.7rem;
-      margin-bottom: 1rem;
-    }
+      <h1>
+        Hi, I’m <span>Rakshitha</span> 👋 <br>
+        A Data Engineering & Analytics Professional <br>
+        crafting <span>scalable data pipelines</span>, cloud solutions, <br>
+        and intelligent analytical systems.
+      </h1>
 
-    #hero .left h1 span {
-      color: var(--accent);
-    }
+      <p class="hero-subtitle">
+        Master’s student at Arizona State University specializing in data engineering,
+        analytics, and cloud-native platforms. I build reliable data pipelines, ML-powered analytics,
+        and end-to-end solutions that help teams make data-backed decisions.
+      </p>
 
-    #hero .left p { max-width: 500px; color: var(--subtext); }
+      <div class="hero-highlights">
+        <div class="pill">Data Engineering</div>
+        <div class="pill">ETL Pipelines</div>
+        <div class="pill">Cloud & Serverless</div>
+        <div class="pill">Python · SQL · Spark</div>
+        <div class="pill">Tableau · Power BI</div>
+      </div>
 
-    .hero-buttons {
-      margin-top: 1.5rem;
-      display: flex; gap: 1rem;
-    }
+      <div class="hero-actions">
+        <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/" 
+           target="_blank" class="btn btn-primary">LinkedIn</a>
 
-    .btn {
-      padding: 0.7rem 1.3rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      border: 1px solid var(--accent);
-      cursor: pointer;
-      transition: 0.3s;
-    }
+        <a href="YOUR_RESUME_LINK_HERE" target="_blank" class="btn btn-outline">
+          View Resume
+        </a>
 
-    .btn.primary {
-      background: var(--accent); color: #000;
-      border: none;
-    }
+        <a href="#projects" class="btn btn-outline">View Projects</a>
+      </div>
 
-    .btn.outline {
-      background: transparent;
-      color: var(--accent);
-    }
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span>ASU</span>
+          M.S. Information Technology
+        </div>
+        <div class="hero-meta-item">
+          <span>4.0 GPA</span>
+          Academic Excellence
+        </div>
+        <div class="hero-meta-item">
+          <span>Certified</span>
+          Google Data Analytics
+        </div>
+      </div>
+    </div>
 
-    .btn:hover { opacity: 0.85; }
+    <!-- RIGHT SIDE: PHOTO + CODE CARD -->
+    <div class="hero-right-card">
 
-    /* SECTION HEADERS ------------------------------------------------ */
-    section { margin-top: 6rem; }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    section p.sub {
-      color: var(--subtext);
-      max-width: 700px;
-      margin-bottom: 2rem;
-    }
+      <!-- PROFILE PHOTO -->
+      <div style="
+          display: flex;
+          justify-content: center;
+          margin-bottom: 1rem;">
+        <img src="assets/rakshitha.jpg"
+             alt="Rakshitha Photo"
+             style="
+               width: 180px;
+               height: 180px;
+               border-radius: 50%;
+               object-fit: cover;
+               border: 2px solid var(--accent);
+               box-shadow: 0 0 25px rgba(59,130,246,0.4);
+             ">
+      </div>
+
+      <div class="hero-orbit-ring"></div>
+      <div class="hero-orbit-glow"></div>
+
+      <div class="hero-right-header">
+        <span>Data Pipeline Snapshot</span>
+        <span class="hero-right-badge">Running</span>
+      </div>
+
+      <div class="hero-code-block">
+        <div class="code-header">
+          <div class="code-dots">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+          </div>
+          <span>etl_pipeline.py</span>
+        </div>
+
+        <div class="code-body">
+<span class="comment"># Example ETL pipeline</span>
+<span class="kw">import</span> pandas <span class="kw">as</span> pd
+
+df <span class="op">=</span> pd.read_csv(<span class="str">"sales_raw.csv"</span>)
+df.drop_duplicates(<span class="str">"order_id"</span>, inplace<span class="op">=</span><span class="kw">True</span>)
+
+df[<span class="str">"order_date"</span>] <span class="op">=</span> pd.to_datetime(df[<span class="str">"order_date"</span>])
+df <span class="op">=</span> df[df.order_date <span class="op">&gt;=</span> <span class="str">"2024-01-01"</span>]
+
+agg <span class="op">=</span> df.groupby(<span class="str">"region"</span>).sales_amount.sum()
+
+agg.to_csv(<span class="str">"clean/region_sales.csv"</span>)
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     /* SKILLS -------------------------------------------------------- */
     .skills-grid {
