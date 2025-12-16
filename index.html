@@ -536,52 +536,117 @@
       text-decoration: underline;
     }
 
-    /* EXPERIENCE ------------------------------------------------ */
-    .timeline {
-      border-radius: 1rem;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      padding: 1.1rem 1.2rem;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.4rem;
-      font-size: 0.86rem;
-    }
+    /* ------------ EXPERIENCE SECTION ------------ */
+.exp-heading {
+  font-size: 1.35rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
 
-    .timeline-column-title {
-      font-weight: 600;
-      margin-bottom: 0.6rem;
-    }
+/* TIMELINE (Industry Experience) */
+.neon-timeline {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.5rem;
+}
 
-    .timeline-item + .timeline-item {
-      margin-top: 0.8rem;
-    }
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.8rem;
+}
 
-    .timeline-role {
-      font-weight: 600;
-      margin-bottom: 0.1rem;
-    }
+.timeline-marker {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  left: -1.6rem;
+  top: 0.35rem;
+  box-shadow: 0 0 12px var(--accent);
+}
 
-    .timeline-org {
-      font-size: 0.8rem;
-      color: var(--subtext);
-    }
+.timeline-content h4 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
 
-    .timeline-meta {
-      font-size: 0.76rem;
-      color: var(--subtext);
-      margin-top: 0.1rem;
-    }
+.timeline-dates {
+  font-size: 0.85rem;
+  color: var(--subtext);
+}
 
-    .timeline-bullets {
-      margin-top: 0.35rem;
-      padding-left: 1.1rem;
-      color: var(--subtext);
-    }
+.timeline-bullets,
+.timeline-content ul {
+  padding-left: 1rem;
+  margin-top: 0.4rem;
+  color: var(--subtext);
+}
 
-    .timeline-bullets li + li {
-      margin-top: 0.22rem;
-    }
+.timeline-content ul li {
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* COMMUNITY CARDS */
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.community-card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+  transition: 0.2s ease;
+}
+
+.community-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 35px rgba(56,189,248,0.25);
+}
+
+.community-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-dates {
+  font-size: 0.85rem;
+  color: var(--subtext);
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--subtext);
+  margin: 0.5rem 0 0.6rem;
+}
+
+.community-card ul {
+  padding-left: 1rem;
+  color: var(--subtext);
+  font-size: 0.9rem;
+}
+
+.community-card ul li {
+  margin-bottom: 0.3rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .timeline {
+    padding-left: 1rem;
+  }
+  .community-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
 
     /* CONTACT --------------------------------------------------- */
     .contact-grid {
@@ -960,131 +1025,143 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>, index=<span class=
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-header">
-        <div class="section-kicker">Experience</div>
-        <h2 class="section-title">Experience & education</h2>
-        <p class="section-sub">
-          A mix of data engineering, analytics, research, customer success, and
-          leadership.
+   
+
+  <!-- ================= EXPERIENCE ================= -->
+<section id="experience">
+
+  <!-- SECTION HEADER -->
+  <div class="section-header">
+    <div class="section-kicker">Experience</div>
+    <h2 class="section-title">Professional & Community Experience</h2>
+    <p class="section-sub">
+      A blend of data engineering, analytics, research, leadership, and impactful community engagement.
+    </p>
+  </div>
+
+  <!-- ================= INDUSTRY EXPERIENCE — TIMELINE ================= -->
+  <div class="industry-section">
+    <h3 class="exp-heading">Industry Experience</h3>
+
+    <div class="timeline neon-timeline">
+
+      <!-- Hatica -->
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h4>Customer Success Associate & Business Analyst — Hatica Labs</h4>
+          <span class="timeline-dates">Feb 2024 – Jun 2024 · Bangalore, India</span>
+          <ul>
+            <li>Led onboarding & training for engineering analytics SaaS customers, ensuring smooth adoption and renewal readiness.</li>
+            <li>Investigated technical issues, analyzed usage trends, and proposed improvements to enhance product experience.</li>
+            <li>Built dashboards visualizing customer engagement and feature adoption for CS & Product teams.</li>
+            <li>Translated customer needs into technical requirements, improving usability and reducing support escalations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Brillio -->
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h4>Project Trainee — Brillio</h4>
+          <span class="timeline-dates">Jun 2023 – Sep 2023 · Bangalore, India</span>
+          <ul>
+            <li>Developed ML-powered forecasting pipelines using Python, Pandas, Scikit-learn, and SQL.</li>
+            <li>Performed EDA, feature engineering, and model validation to optimize predictive performance.</li>
+            <li>Built ETL workflows & dashboards exposing manufacturing and sales insights to business teams.</li>
+            <li>Supported workflow validation and improvement initiatives aligned with Six Sigma principles.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Idea Infinity -->
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h4>Analyst Intern — Idea Infinity IT Solutions</h4>
+          <span class="timeline-dates">Mar 2023 – May 2023 · Bangalore, India</span>
+          <ul>
+            <li>Analyzed ATP transaction data to identify gaps and improve workflow performance.</li>
+            <li>Conducted UAT, system testing, and requirement mapping to support enterprise deployment.</li>
+            <li>Created SOPs & functional documentation to streamline compliance and operational processes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DRDO -->
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h4>Research Intern (NLP) — DRDO</h4>
+          <span class="timeline-dates">Aug 2022 – Nov 2022 · Bangalore, India</span>
+          <ul>
+            <li>Developed a BiLSTM Seq2Seq multilingual speech-to-text model achieving 88%+ accuracy.</li>
+            <li>Processed & engineered features for 10k+ annotated samples using TensorFlow, NLTK, and spaCy.</li>
+            <li>Designed preprocessing pipelines for normalization, tokenization & augmentation.</li>
+            <li>Documented findings and presented research outcomes to DRDO scientists.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= COMMUNITY EXPERIENCE — CARDS ================= -->
+  <div class="community-section">
+    <h3 class="exp-heading">Community & Leadership Experience</h3>
+
+    <div class="community-grid">
+
+      <!-- ASU NExT -->
+      <div class="community-card">
+        <h4>Community Connector — ASU Next Education Workforce</h4>
+        <span class="card-dates">Apr 2025 – Present · Mesa, Arizona</span>
+        <p class="card-desc">
+          Leading a pilot initiative to strengthen school–community partnerships through personalized learning support.
         </p>
+        <ul>
+          <li>Designed outreach systems: volunteer recruitment, training, communication assets.</li>
+          <li>Coordinated classroom placements for reading, math, and tech assistance volunteers.</li>
+          <li>Built partnerships with nonprofits + sponsors to support school needs.</li>
+          <li>Created tracking processes for participation, feedback, and milestone reporting.</li>
+        </ul>
       </div>
 
-      <div class="timeline">
-        <div>
-          <div class="timeline-column-title">Industry</div>
-
-          <div class="timeline-item">
-            <div class="timeline-role">
-              Customer Success Associate & Business Analyst
-            </div>
-            <div class="timeline-org">Hatica Labs · India</div>
-            <div class="timeline-meta">Feb 2024 – Jun 2024</div>
-            <ul class="timeline-bullets">
-              <li>
-                Led onboarding and training for an engineering analytics SaaS
-                platform, managing key accounts and supporting renewals.
-              </li>
-              <li>
-                Analyzed product usage and customer behavior to build dashboards
-                and inform customer success strategy.
-              </li>
-              <li>
-                Collaborated with engineering to streamline integrations and
-                improve data workflows.
-              </li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-role">Project Trainee – Data & ML</div>
-            <div class="timeline-org">Brillio · India</div>
-            <div class="timeline-meta">Jun 2023 – Sep 2023</div>
-            <ul class="timeline-bullets">
-              <li>
-                Developed data pipelines and ML models for sales forecasting
-                using Python, Pandas, Scikit-learn, and SQL.
-              </li>
-              <li>
-                Delivered dashboards and reports that surfaced key business
-                insights for manufacturing workflows.
-              </li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-role">Analyst Intern</div>
-            <div class="timeline-org">Idea Infinity IT Solutions · India</div>
-            <div class="timeline-meta">Mar 2023 – May 2023</div>
-            <ul class="timeline-bullets">
-              <li>
-                Analyzed ATP system transaction data to optimize payment
-                workflows and ensure compliance.
-              </li>
-              <li>
-                Conducted UAT and created SOPs and test protocols for large
-                deployments.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div>
-          <div class="timeline-column-title">Education & research</div>
-
-          <div class="timeline-item">
-            <div class="timeline-role">M.S. Information Technology</div>
-            <div class="timeline-org">Arizona State University · USA</div>
-            <div class="timeline-meta">Aug 2024 – May 2026 (expected)</div>
-            <ul class="timeline-bullets">
-              <li>
-                Coursework: Analyzing Big Data, Advanced Database Management,
-                Data Visualization, Information System Development, Predictive Analytics.
-              </li>
-              <li>
-                GPA: 4.0/4.0, with projects focusing on data engineering and analytics.
-              </li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-role">
-              B.E. Information Science & Engineering
-            </div>
-            <div class="timeline-org">BMS College of Engineering · India</div>
-            <div class="timeline-meta">Aug 2019 – Jul 2023</div>
-            <ul class="timeline-bullets">
-              <li>
-                GPA ~3.9/4.0, with coursework in DS & Algorithms, OS, OOP,
-                AI/ML, and Deep Learning.
-              </li>
-              <li>
-                Completed an EEG-based research project and a Python package
-                for preprocessing and visualizing signals.
-              </li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-role">Research Intern – NLP</div>
-            <div class="timeline-org">DRDO · India</div>
-            <div class="timeline-meta">Aug 2022 – Nov 2022</div>
-            <ul class="timeline-bullets">
-              <li>
-                Built and fine-tuned a BiLSTM-based multilingual
-                transcription/translation model with 88%+ accuracy using
-                TensorFlow, NLTK, and spaCy.
-              </li>
-              <li>
-                Processed 10k+ annotated samples and documented results in
-                internal reports.
-              </li>
-            </ul>
-          </div>
-        </div>
+      <!-- Sahai NGO -->
+      <div class="community-card">
+        <h4>Events & PR Lead — Sahai Mental Health NGO</h4>
+        <span class="card-dates">Jun 2021 – Apr 2024 · Bangalore, India</span>
+        <p class="card-desc">
+          Led community outreach and mental health awareness initiatives for one of Bangalore’s active NGOs.
+        </p>
+        <ul>
+          <li>Organized 10+ awareness drives, webinars, and panel discussions.</li>
+          <li>Increased volunteer engagement & event participation by 30%.</li>
+          <li>Managed PR, content strategy & media communication for campaigns.</li>
+        </ul>
       </div>
-    </section>
+
+      <!-- Rotaract / Utsav -->
+      <div class="community-card">
+        <h4>Event & Outreach Coordinator — Rotaract Club & Utsav Fest</h4>
+        <span class="card-dates">Mar 2022 – Jun 2023 · Bangalore, India</span>
+        <p class="card-desc">
+          Directed logistics and community initiatives for student festivals & outreach programs.
+        </p>
+        <ul>
+          <li>Managed hospitality & volunteer operations for Utsav (20,000+ footfall event).</li>
+          <li>Led initiatives like iTeach, mental health drives & menstrual hygiene workshops.</li>
+          <li>Coordinated across technical, sponsorship & cultural teams for smooth execution.</li>
+          <li>Created leadership pathways for 100+ student volunteers.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
 
     <!-- CONTACT -->
     <section id="contact">
