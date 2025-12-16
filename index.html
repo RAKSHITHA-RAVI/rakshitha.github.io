@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <title>Rakshitha Bangalore Ravishankar | Data Engineer & Analyst</title>
+  <title>Rakshitha Bangalore Ravishankar | Data Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    /* GLOBAL -------------------------------------------------------- */
     :root {
       --bg: #09090f;
       --bg2: #0f0f17;
@@ -18,7 +18,8 @@
     }
 
     * {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
       font-family: "Inter", sans-serif;
       scroll-behavior: smooth;
@@ -30,20 +31,29 @@
       line-height: 1.6;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { opacity: 0.85; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.85;
+    }
 
     .container {
-      width: 90%; max-width: 1100px;
+      width: 90%;
+      max-width: 1100px;
       margin: auto;
       padding-top: 4rem;
     }
 
-    /* NAVBAR -------------------------------------------------------- */
+    /* NAVBAR ------------------------------------------- */
     nav {
       width: 100%;
       padding: 1rem 0;
-      position: fixed; top: 0; left: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
       background: rgba(9, 9, 15, 0.7);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
@@ -51,135 +61,131 @@
     }
 
     nav .inner {
-      width: 90%; max-width: 1100px; margin: auto;
-      display: flex; justify-content: space-between;
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
     }
 
     nav ul {
-      display: flex; gap: 1.5rem; list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
     }
 
-    nav ul li a { color: var(--subtext); font-size: 0.95rem; }
-    nav ul li a:hover { color: var(--text); }
+    nav ul li a {
+      color: var(--subtext);
+      font-size: 0.95rem;
+    }
 
-    <!-- ====== HERO ====== -->
-<section id="home">
-  <div class="hero">
+    nav ul li a:hover {
+      color: var(--text);
+    }
 
-    <!-- LEFT SIDE: TEXT INTRO -->
-    <div>
-      <div class="hero-tag">
-        <span class="hero-tag-dot"></span>
-        Open to Internship & Full-Time Roles · May 2026 Graduate
-      </div>
+    /* TAG STYLING -------------------------------------------------- */
+    .tag {
+      padding: 5px 10px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: var(--subtext);
+    }
 
-      <h1>
-        Hi, I’m <span>Rakshitha</span> 👋 <br>
-        A Data Engineering & Analytics Professional <br>
-        crafting <span>scalable data pipelines</span>, cloud solutions, <br>
-        and intelligent analytical systems.
-      </h1>
+    /* HERO SECTION -------------------------------------------------- */
+    #home {
+      padding: 6rem 0 3rem;
+    }
 
-      <p class="hero-subtitle">
-        Master’s student at Arizona State University specializing in data engineering,
-        analytics, and cloud-native platforms. I build reliable data pipelines, ML-powered analytics,
-        and end-to-end solutions that help teams make data-backed decisions.
-      </p>
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
 
-      <div class="hero-highlights">
-        <div class="pill">Data Engineering</div>
-        <div class="pill">ETL Pipelines</div>
-        <div class="pill">Cloud & Serverless</div>
-        <div class="pill">Python · SQL · Spark</div>
-        <div class="pill">Tableau · Power BI</div>
-      </div>
+    .hero-heading {
+      font-size: 2.6rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
 
-      <div class="hero-actions">
-        <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/" 
-           target="_blank" class="btn btn-primary">LinkedIn</a>
+    .hero-heading span {
+      color: var(--accent);
+    }
 
-        <a href="YOUR_RESUME_LINK_HERE" target="_blank" class="btn btn-outline">
-          View Resume
-        </a>
+    .hero-subtext {
+      color: var(--subtext);
+      max-width: 550px;
+      margin-bottom: 1.5rem;
+    }
 
-        <a href="#projects" class="btn btn-outline">View Projects</a>
-      </div>
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
 
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <span>ASU</span>
-          M.S. Information Technology
-        </div>
-        <div class="hero-meta-item">
-          <span>4.0 GPA</span>
-          Academic Excellence
-        </div>
-        <div class="hero-meta-item">
-          <span>Certified</span>
-          Google Data Analytics
-        </div>
-      </div>
-    </div>
+    .btn.primary {
+      padding: 10px 20px;
+      background: var(--accent);
+      color: #000;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+    }
 
-    <!-- RIGHT SIDE: PHOTO + CODE CARD -->
-    <div class="hero-right-card">
+    .btn.outline {
+      padding: 10px 20px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 8px;
+    }
 
-      <!-- PROFILE PHOTO -->
-      <div style="
-          display: flex;
-          justify-content: center;
-          margin-bottom: 1rem;">
-        <img src="assets/img.jpg"
-             alt="Rakshitha Photo"
-             style="
-               width: 180px;
-               height: 180px;
-               border-radius: 50%;
-               object-fit: cover;
-               border: 2px solid var(--accent);
-               box-shadow: 0 0 25px rgba(59,130,246,0.4);
-             ">
-      </div>
+    .hero-photo {
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 30px rgba(90, 165, 255, 0.4);
+      display: block;
+      margin: auto;
+    }
 
-      <div class="hero-orbit-ring"></div>
-      <div class="hero-orbit-glow"></div>
+    .code-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+      margin-top: 1.2rem;
+    }
 
-      <div class="hero-right-header">
-        <span>Data Pipeline Snapshot</span>
-        <span class="hero-right-badge">Running</span>
-      </div>
+    pre {
+      white-space: pre-wrap;
+      font-family: "JetBrains Mono", monospace;
+      color: var(--text);
+    }
 
-      <div class="hero-code-block">
-        <div class="code-header">
-          <div class="code-dots">
-            <span class="code-dot red"></span>
-            <span class="code-dot yellow"></span>
-            <span class="code-dot green"></span>
-          </div>
-          <span>etl_pipeline.py</span>
-        </div>
+    /* SECTIONS ------------------------------------------------------ */
+    section {
+      margin-top: 6rem;
+    }
 
-        <div class="code-body">
-<span class="comment"># Example ETL pipeline</span>
-<span class="kw">import</span> pandas <span class="kw">as</span> pd
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
 
-df <span class="op">=</span> pd.read_csv(<span class="str">"sales_raw.csv"</span>)
-df.drop_duplicates(<span class="str">"order_id"</span>, inplace<span class="op">=</span><span class="kw">True</span>)
-
-df[<span class="str">"order_date"</span>] <span class="op">=</span> pd.to_datetime(df[<span class="str">"order_date"</span>])
-df <span class="op">=</span> df[df.order_date <span class="op">&gt;=</span> <span class="str">"2024-01-01"</span>]
-
-agg <span class="op">=</span> df.groupby(<span class="str">"region"</span>).sales_amount.sum()
-
-agg.to_csv(<span class="str">"clean/region_sales.csv"</span>)
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+    section p.sub {
+      color: var(--subtext);
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
 
     /* SKILLS -------------------------------------------------------- */
     .skills-grid {
@@ -193,21 +199,6 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>)
       padding: 1rem;
       border-radius: 12px;
       border: 1px solid var(--border);
-    }
-
-    .skill-card h3 { margin-bottom: 0.5rem; }
-
-    .tags {
-      display: flex; flex-wrap: wrap; gap: 0.4rem;
-    }
-
-    .tag {
-      padding: 0.25rem 0.6rem;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 0.75rem;
-      color: var(--subtext);
     }
 
     /* PROJECTS -------------------------------------------------------- */
@@ -230,11 +221,6 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>)
       border-color: var(--accent);
     }
 
-    .project-card h3 { margin-bottom: 0.5rem; }
-    .project-card p { color: var(--subtext); margin-bottom: 1rem; }
-
-    .project-links a { margin-right: 1rem; font-size: 0.9rem; }
-
     /* EXPERIENCE ------------------------------------------------------ */
     .timeline {
       border-left: 2px solid var(--accent);
@@ -245,17 +231,11 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>)
       margin-bottom: 2rem;
     }
 
-    .exp-item h3 { margin-bottom: 0.3rem; }
     .exp-item span {
-      color: var(--subtext); font-size: 0.9rem;
+      color: var(--subtext);
     }
 
-    .exp-item ul { margin-top: 0.5rem; padding-left: 1.2rem; }
-    .exp-item ul li { color: var(--subtext); margin-bottom: 0.3rem; }
-
     /* CONTACT ---------------------------------------------------------- */
-    #contact a { display: block; margin-bottom: 0.5rem; }
-
     footer {
       margin-top: 4rem;
       padding: 1.5rem 0;
@@ -272,7 +252,7 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>)
     <div class="inner">
       <strong>Rakshitha</strong>
       <ul>
-        <li><a href="#hero">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -281,80 +261,118 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>)
     </div>
   </nav>
 
+
   <div class="container">
 
-    <!-- HERO -->
-    <section id="hero">
-      <div class="left">
-        <h1>
-          Hi, I’m <span>Rakshitha</span> 👋<br />
-          I build modern <span>data pipelines</span>, analytics solutions & cloud-native systems.
-        </h1>
-        <p>
-          Master’s student in Information Technology at Arizona State University (May 2026).
-          Passionate about Data Engineering, Analytics, Cloud, and ML-based automation.
-        </p>
+    <!-- ================= HERO ================= -->
+    <section id="home">
+      <div class="hero-container">
 
-        <div class="hero-buttons">
-          <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/" target="_blank" class="btn primary">LinkedIn</a>
-          <a href="YOUR_RESUME_LINK" target="_blank" class="btn outline">Resume</a>
+        <!-- LEFT -->
+        <div>
+          <div style="
+              display: inline-block;
+              padding: 6px 14px;
+              border-radius: 20px;
+              border: 1px solid var(--accent);
+              color: var(--accent);
+              font-size: 0.75rem;
+              margin-bottom: 1rem;
+          ">Open to Internship & Full-time Roles • May 2026</div>
+
+          <h1 class="hero-heading">
+            Hi, I’m <span>Rakshitha</span> 👋 <br>
+            I build <span>scalable data pipelines</span>, <br>
+            cloud systems & intelligent analytics.
+          </h1>
+
+          <p class="hero-subtext">
+            Master’s student at Arizona State University specializing in Data Engineering,
+            Analytics, Cloud Systems, and machine learning–driven automation.
+            I design end-to-end data solutions that help organizations make smarter decisions.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/"
+               target="_blank"
+               class="btn primary">LinkedIn</a>
+
+            <a href="YOUR_RESUME_LINK"
+               target="_blank"
+               class="btn outline">Resume</a>
+          </div>
+
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; max-width: 500px;">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">ETL Pipelines</span>
+            <span class="tag">AWS Lambda</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Docker</span>
+          </div>
         </div>
-      </div>
 
-      <!-- YOUR PHOTO GOES HERE -->
-      <img src="YOUR_PHOTO_PATH_HERE" alt="Rakshitha Photo" />
+
+        <!-- RIGHT SIDE -->
+        <div>
+          <img src="assets/img.jpg" class="hero-photo">
+
+          <div class="code-card">
+            <div style="color: var(--subtext); margin-bottom: 0.5rem;">etl_pipeline.py</div>
+<pre>
+# Example ETL pipeline
+import pandas as pd
+
+df = pd.read_csv("sales_raw.csv")
+df = df.drop_duplicates("order_id")
+
+df["order_date"] = pd.to_datetime(df["order_date"])
+df = df[df.order_date >= "2024-01-01"]
+
+agg = df.groupby("region").sales_amount.sum()
+
+agg.to_csv("clean/region_sales.csv")
+</pre>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- SKILLS -->
+
+    <!-- ================= SKILLS ================= -->
     <section id="skills">
       <h2>Skills</h2>
-      <p class="sub">A combination of data engineering, analytics, ML, cloud, and software capabilities.</p>
+      <p class="sub">
+        A combination of data engineering, analytics, ML, cloud, and software capabilities.
+      </p>
 
       <div class="skills-grid">
         <div class="skill-card">
           <h3>Programming</h3>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">SQL</span>
-            <span class="tag">C++</span><span class="tag">Java</span>
-            <span class="tag">R</span>
-          </div>
+          <p>Python, SQL, C++, Java, R</p>
         </div>
-
         <div class="skill-card">
           <h3>Data Engineering</h3>
-          <div class="tags">
-            <span class="tag">ETL Pipelines</span><span class="tag">PostgreSQL</span>
-            <span class="tag">Pandas</span><span class="tag">PySpark</span>
-          </div>
+          <p>ETL Pipelines, PostgreSQL, Pandas, PySpark</p>
         </div>
-
         <div class="skill-card">
           <h3>Analytics</h3>
-          <div class="tags">
-            <span class="tag">Power BI</span><span class="tag">Tableau</span>
-            <span class="tag">EDA</span><span class="tag">Predictive Models</span>
-          </div>
+          <p>Power BI, Tableau, Predictive Modeling, EDA</p>
         </div>
-
         <div class="skill-card">
           <h3>Cloud & DevOps</h3>
-          <div class="tags">
-            <span class="tag">AWS Lambda</span><span class="tag">Docker</span>
-            <span class="tag">GitHub Actions</span><span class="tag">FastAPI</span>
-          </div>
+          <p>AWS Lambda, Docker, GitHub Actions, FastAPI</p>
         </div>
-
         <div class="skill-card">
           <h3>Productivity</h3>
-          <div class="tags">
-            <span class="tag">Salesforce</span><span class="tag">Notion</span>
-            <span class="tag">JIRA</span><span class="tag">Airtable</span>
-          </div>
+          <p>Salesforce, Notion, Jira, Airtable</p>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
+
+    <!-- ================= PROJECTS ================= -->
     <section id="projects">
       <h2>Projects</h2>
       <p class="sub">Some of the work I've done across data engineering, ML, and analytics.</p>
@@ -363,65 +381,45 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>)
 
         <div class="project-card">
           <h3>Enterprise Sales Data Pipeline & Dashboard</h3>
-          <p>
-            Built a Python → PostgreSQL ETL system for 1M+ records and designed a Tableau analytics dashboard tracking real-time KPIs.
-          </p>
-          <div class="project-links">
-            <a href="#">GitHub</a>
-            <a href="#">Case Study</a>
-          </div>
+          <p>Built a Python → PostgreSQL ETL system for 1M+ sales records with Tableau analytics.</p>
+          <a href="#">GitHub</a> • <a href="#">Case Study</a>
         </div>
 
         <div class="project-card">
           <h3>AI-Powered IT Asset Management Chatbot</h3>
-          <p>
-            Developed an LLM-based RAG chatbot using FastAPI, Pinecone, Docker & AWS Lambda to automate IT asset lookups (cut manual search by 60%).
-          </p>
-          <div class="project-links">
-            <a href="#">GitHub</a>
-            <a href="#">Architecture</a>
-          </div>
+          <p>RAG-based LLM chatbot using FastAPI, Pinecone, Docker & AWS Lambda.</p>
+          <a href="#">GitHub</a> • <a href="#">Architecture</a>
         </div>
 
         <div class="project-card">
           <h3>Diabetes Data Visualization Dashboard</h3>
-          <p>
-            Interactive Tableau dashboard analyzing 101K+ medical records across 130 hospitals; insights into readmissions, medication usage & demographics.
-          </p>
-          <div class="project-links">
-            <a href="#">Dashboard</a>
-            <a href="#">Details</a>
-          </div>
+          <p>Tableau dashboard analyzing 101K+ medical records across 130 hospitals.</p>
+          <a href="#">Dashboard</a> • <a href="#">Details</a>
         </div>
 
         <div class="project-card">
-          <h3>Trading Strategy Analyzer (Backtesting Engine)</h3>
-          <p>
-            Created a Python-based backtesting engine with vectorized performance (~10× speedup) to analyze PnL, drawdown & Sharpe ratio.
-          </p>
-          <div class="project-links">
-            <a href="#">GitHub</a>
-            <a href="#">Analysis</a>
-          </div>
+          <h3>Trading Strategy Analyzer</h3>
+          <p>Backtesting engine with vectorized Python + performance metrics.</p>
+          <a href="#">GitHub</a> • <a href="#">Analysis</a>
         </div>
 
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
+
+    <!-- ================= EXPERIENCE ================= -->
     <section id="experience">
       <h2>Experience</h2>
       <p class="sub">A mix of engineering, analytics, research & leadership work.</p>
 
       <div class="timeline">
-
         <div class="exp-item">
-          <h3>Customer Success Associate & Associate Engineer — Hatica Labs</h3>
+          <h3>Customer Success Associate & Engineer — Hatica Labs</h3>
           <span>Feb 2024 – Jun 2024</span>
           <ul>
             <li>Led onboarding for engineering analytics SaaS customers.</li>
             <li>Automated data pipelines using Python & APIs.</li>
-            <li>Created usage dashboards to support retention & renewals.</li>
+            <li>Created usage dashboards to support renewals.</li>
           </ul>
         </div>
 
@@ -429,9 +427,8 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>)
           <h3>Project Trainee — Brillio</h3>
           <span>Jun 2023 – Sep 2023</span>
           <ul>
-            <li>Developed ML forecasting models using Python & SQL.</li>
-            <li>Built E2E data pipelines and delivered analytics dashboards.</li>
-            <li>Improved manufacturing workflows using data insights.</li>
+            <li>Built ML forecasting models using Python and SQL.</li>
+            <li>Created E2E data pipelines and analytics dashboards.</li>
           </ul>
         </div>
 
@@ -439,8 +436,8 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>)
           <h3>Analyst Intern — Idea Infinity</h3>
           <span>Mar 2023 – May 2023</span>
           <ul>
-            <li>Analyzed ATP machine transactions for workflow optimization.</li>
-            <li>Performed UAT & wrote SOPs for large-scale system testing.</li>
+            <li>Analyzed transaction workflows and optimized performance.</li>
+            <li>Performed UAT and created SOP documentation.</li>
           </ul>
         </div>
 
@@ -448,29 +445,29 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>)
           <h3>Research Intern — DRDO</h3>
           <span>Aug 2022 – Nov 2022</span>
           <ul>
-            <li>Built a BiLSTM-based multilingual transcription model (88% accuracy).</li>
-            <li>Processed 10k+ samples using TensorFlow, NLTK, spaCy.</li>
+            <li>Built BiLSTM multilingual transcription model (88% accuracy).</li>
           </ul>
         </div>
-
       </div>
     </section>
 
-    <!-- CONTACT -->
+
+    <!-- ================= CONTACT ================= -->
     <section id="contact">
       <h2>Contact</h2>
       <p class="sub">Let’s build something amazing together.</p>
 
-      <a href="mailto:rbangal9@asu.edu">rbangal9@asu.edu</a>
-      <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/">LinkedIn</a>
+      <a href="mailto:rbangal9@asu.edu">rbangal9@asu.edu</a><br>
+      <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/">LinkedIn</a><br>
       <a href="https://github.com/YOUR_GITHUB_USERNAME">GitHub</a>
     </section>
 
   </div>
 
   <footer>
-    © 2025 Rakshitha Bangalore Ravishankar — Built with ❤️ and GitHub Pages
+    © 2025 Rakshitha · Built with ❤️ using HTML & GitHub Pages
   </footer>
 
 </body>
+
 </html>
