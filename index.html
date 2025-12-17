@@ -15,7 +15,6 @@
       --accent: #38bdf8;
       --accent-soft: rgba(56, 189, 248, 0.16);
       --border: rgba(148, 163, 184, 0.25);
-      --danger: #f97373;
     }
 
     * {
@@ -458,177 +457,178 @@
     }
 
     /* PROJECTS -------------------------------------------------- */
- .project-title {
-  margin-bottom: 0.2rem;
-}
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
 
-.project-meta {
-  font-size: 0.85rem;
-  color: var(--subtext);
-  margin-bottom: 0.6rem;
-}
+    .project-card {
+      border-radius: 1.1rem;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: radial-gradient(
+          circle at top left,
+          rgba(56, 189, 248, 0.16),
+          transparent 60%
+        ),
+        var(--bg-card);
+      padding: 1rem 1.1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+      font-size: 0.86rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease,
+        border-color 0.2s ease;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+    }
 
-.project-desc {
-  color: var(--subtext);
-  margin-bottom: 1rem;
-  line-height: 1.4;
-}
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 14px 35px rgba(56,189,248,0.3);
+    }
 
-.project-desc li {
-  margin-bottom: 0.3rem;
-}
+    .project-chip {
+      display: inline-flex;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.75rem;
+      color: var(--subtext);
+      margin-bottom: 0.35rem;
+      background: rgba(15,23,42,0.9);
+    }
 
-.project-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
-}
+    .project-title {
+      font-size: 1.05rem;
+      margin-bottom: 0.15rem;
+      font-weight: 600;
+    }
 
-.project-tags {
-  color: var(--subtext);
-}
+    .project-meta {
+      font-size: 0.83rem;
+      color: var(--subtext);
+      margin-bottom: 0.45rem;
+    }
 
-.project-links a {
-  color: var(--accent);
-  font-size: 0.85rem;
-}
+    .project-desc {
+      margin: 0.5rem 0 0.6rem;
+      padding-left: 1rem;
+      color: var(--subtext);
+    }
 
-.project-links a:hover {
-  text-decoration: underline;
-}
+    .project-desc li {
+      margin-bottom: 0.3rem;
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
 
-.project-desc {
-  margin: 0.6rem 0 1rem;
-  color: var(--subtext);
-  padding-left: 1rem;
-}
-
-.project-desc li {
-  margin-bottom: 0.35rem;
-  font-size: 0.88rem;
-  line-height: 1.45;
-}
-
-.project-tech {
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  color: var(--accent);
-}
-
-
+    .project-tech {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-top: 0.3rem;
+    }
 
     /* ------------ EXPERIENCE SECTION ------------ */
-.exp-heading {
-  font-size: 1.35rem;
-  color: var(--accent);
-  margin-bottom: 1rem;
-  margin-top: 1.5rem;
-}
+    .exp-heading {
+      font-size: 1.35rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
 
-/* TIMELINE (Industry Experience) */
-.neon-timeline {
-  border-left: 2px solid var(--accent);
-  padding-left: 1.5rem;
-}
+    /* TIMELINE (Industry Experience) */
+    .neon-timeline {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.5rem;
+    }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 1.8rem;
-}
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.8rem;
+    }
 
-.timeline-marker {
-  width: 12px;
-  height: 12px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: absolute;
-  left: -1.6rem;
-  top: 0.35rem;
-  box-shadow: 0 0 12px var(--accent);
-}
+    .timeline-marker {
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: absolute;
+      left: -1.6rem;
+      top: 0.35rem;
+      box-shadow: 0 0 12px var(--accent);
+    }
 
-.timeline-content h4 {
-  font-size: 1rem;
-  margin-bottom: 0.2rem;
-}
+    .timeline-content h4 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
 
-.timeline-dates {
-  font-size: 0.85rem;
-  color: var(--subtext);
-}
+    .timeline-dates {
+      font-size: 0.85rem;
+      color: var(--subtext);
+    }
 
-.timeline-bullets,
-.timeline-content ul {
-  padding-left: 1rem;
-  margin-top: 0.4rem;
-  color: var(--subtext);
-}
+    .timeline-content ul {
+      padding-left: 1rem;
+      margin-top: 0.4rem;
+      color: var(--subtext);
+    }
 
-.timeline-content ul li {
-  margin-bottom: 0.3rem;
-  font-size: 0.9rem;
-}
+    .timeline-content ul li {
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+    }
 
-/* COMMUNITY CARDS */
-.community-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-}
+    /* COMMUNITY CARDS */
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
 
-.community-card {
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.3);
-  padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.4);
-  transition: 0.2s ease;
-}
+    .community-card {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+      transition: 0.2s ease;
+      font-size: 0.88rem;
+    }
 
-.community-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: 0 12px 35px rgba(56,189,248,0.25);
-}
+    .community-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 35px rgba(56,189,248,0.25);
+    }
 
-.community-card h4 {
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
-}
+    .community-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+    }
 
-.card-dates {
-  font-size: 0.85rem;
-  color: var(--subtext);
-}
+    .card-dates {
+      font-size: 0.84rem;
+      color: var(--subtext);
+      margin-bottom: 0.4rem;
+    }
 
-.card-desc {
-  font-size: 0.9rem;
-  color: var(--subtext);
-  margin: 0.5rem 0 0.6rem;
-}
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--subtext);
+      margin-bottom: 0.4rem;
+    }
 
-.community-card ul {
-  padding-left: 1rem;
-  color: var(--subtext);
-  font-size: 0.9rem;
-}
+    .community-card ul {
+      padding-left: 1rem;
+      color: var(--subtext);
+      font-size: 0.86rem;
+    }
 
-.community-card ul li {
-  margin-bottom: 0.3rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .timeline {
-    padding-left: 1rem;
-  }
-  .community-grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-}
-
+    .community-card ul li {
+      margin-bottom: 0.28rem;
+    }
 
     /* CONTACT --------------------------------------------------- */
     .contact-grid {
@@ -715,8 +715,11 @@
       }
 
       .projects-grid,
-      .contact-grid,
-      .timeline {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .community-grid {
         grid-template-columns: minmax(0, 1fr);
       }
     }
@@ -799,7 +802,7 @@
             >LinkedIn</a>
 
             <a
-              href="YOUR_RESUME_LINK"
+              href="YOUR_RESUME_LINK_HERE"
               target="_blank"
               class="btn btn-ghost"
             >View Resume</a>
@@ -918,269 +921,240 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>, index=<span class=
     </section>
 
     <!-- PROJECTS -->
-<section id="projects">
-  <div class="section-header">
-    <div class="section-kicker">Projects</div>
-    <h2 class="section-title">Selected Work</h2>
-    <p class="section-sub">
-      A curated collection of data engineering, analytics, LLM, visualization, and research projects.
-    </p>
-  </div>
-
-  <div class="projects-grid">
-
-    <!-- Project 1 -->
-    <article class="project-card">
-      <div class="project-chip">Data Engineering · Analytics</div>
-      <h3 class="project-title">Enterprise Sales Data Pipeline & Insights Dashboard</h3>
-      <span class="project-meta">Jan 2025 – Jun 2025</span>
-
-      <ul class="project-desc">
-        <li>Built a Python–SQL ETL pipeline for ~1M sales records, enabling real-time updates into PostgreSQL.</li>
-        <li>Engineered transformations for revenue trends, churn indicators, and product-level performance metrics.</li>
-        <li>Developed Tableau dashboards to visualize KPIs such as sales trends, churn risk, and customer segmentation.</li>
-        <li>Used Generative AI tools (ChatGPT, Copilot) to automate documentation and streamline workflow development.</li>
-      </ul>
-
-      <div class="project-tech">Tech: Python, SQL, PostgreSQL, Tableau, ChatGPT, Copilot</div>
-    </article>
-
-    <!-- Project 2 -->
-    <article class="project-card">
-      <div class="project-chip">Healthcare · Visualization</div>
-      <h3 class="project-title">Diabetes Data Visualization Dashboard</h3>
-      <span class="project-meta">Jan 2025 – May 2025</span>
-
-      <ul class="project-desc">
-        <li>Created a Tableau dashboard analyzing 101K+ diabetes records from 130 hospitals across 10 years.</li>
-        <li>Visualized trends in demographics, medication usage, readmission rates, and healthcare utilization.</li>
-        <li>Cleaned and transformed clinical datasets using Tableau Prep to ensure high-quality analytical outputs.</li>
-      </ul>
-
-      <div class="project-tech">Tech: Tableau, Tableau Prep, Excel</div>
-    </article>
-
-    <!-- Project 3 -->
-    <article class="project-card">
-      <div class="project-chip">LLMs · Cloud · Automation</div>
-      <h3 class="project-title">AI-Powered IT Asset Management Chatbot</h3>
-      <span class="project-meta">Jan 2024 – Dec 2024</span>
-
-      <ul class="project-desc">
-        <li>Built a Retrieval-Augmented Generation (RAG) chatbot to automate IT asset queries, reducing manual lookup time by 60%.</li>
-        <li>Developed a FastAPI backend with structured asset lookup logic, embedding generation, and query routing.</li>
-        <li>Deployed the system using Docker, AWS Lambda, and API Gateway for scalable, serverless execution.</li>
-      </ul>
-
-      <div class="project-tech">Tech: Python, LangChain, FastAPI, Docker, AWS Lambda, API Gateway, OpenAI API, Pinecone</div>
-    </article>
-
-    <!-- Project 4 -->
-    <article class="project-card">
-      <div class="project-chip">LLMs · Full-Stack</div>
-      <h3 class="project-title">AI Text Summarizer Web App</h3>
-      <span class="project-meta">May 2025 – Jun 2025</span>
-
-      <ul class="project-desc">
-        <li>Built a React + FastAPI summarization platform powered by the Hugging Face BART model.</li>
-        <li>Implemented customizable summary lengths, dark/light mode, history tracking & export options.</li>
-        <li>Deployed frontend on Netlify and backend on Render for public usage.</li>
-      </ul>
-
-      <div class="project-tech">Tech: React, Material-UI, FastAPI, Hugging Face BART, Netlify, Render</div>
-    </article>
-
-    <!-- Project 5 -->
-    <article class="project-card">
-      <div class="project-chip">Research · Signal Processing</div>
-      <h3 class="project-title">EEG Cognitive Patterns Study</h3>
-      <span class="project-meta">Jan 2023 – Jul 2023</span>
-
-      <ul class="project-desc">
-        <li>Developed a Python package for EEG data ingestion, preprocessing, feature extraction & PCA workflows.</li>
-        <li>Analyzed EEG signals from 30+ participants to compare meditators vs non-meditators.</li>
-        <li>Created brainwave visualizations using Matplotlib & Plotly to interpret cognitive state differences.</li>
-      </ul>
-
-      <div class="project-tech">Tech: Python, NumPy, SciPy, MNE, Scikit-learn, Matplotlib, Plotly</div>
-    </article>
-
-    <!-- Project 6 -->
-    <article class="project-card">
-      <div class="project-chip">NLP · Deep Learning</div>
-      <h3 class="project-title">English–Hindi Language Translation Model</h3>
-      <span class="project-meta">Jul 2022 – Dec 2022</span>
-
-      <ul class="project-desc">
-        <li>Developed a Seq2Seq LSTM translation model for English→Hindi neural machine translation.</li>
-        <li>Implemented tokenization, vocabulary building, and padded sequence generation for dataset preparation.</li>
-        <li>Validated model accuracy using evaluation sets and iterative training cycles.</li>
-      </ul>
-
-      <div class="project-tech">Tech: Python, TensorFlow/Keras, LSTM, NLP preprocessing</div>
-    </article>
-
-    <!-- Project 7 -->
-    <article class="project-card">
-      <div class="project-chip">Web App · EdTech</div>
-      <h3 class="project-title">Proctor–Student Management Portal</h3>
-      <span class="project-meta">Jan 2022 – May 2022</span>
-
-      <ul class="project-desc">
-        <li>Developed a full-stack portal for structured communication between students, proctors, and parents.</li>
-        <li>Implemented automated attendance alerts, centralized announcements, and student profile tracking.</li>
-        <li>Built responsive UI using React and managed backend logic with MongoDB.</li>
-      </ul>
-
-      <div class="project-tech">Tech: HTML, React, MongoDB</div>
-    </article>
-
-  </div>
-</section>
-
-
-  
-
-
-   
-
-  <!-- ================= EXPERIENCE ================= -->
-<section id="experience">
-
-  <!-- SECTION HEADER -->
-  <div class="section-header">
-    <div class="section-kicker">Experience</div>
-    <h2 class="section-title">Professional & Community Experience</h2>
-    <p class="section-sub">
-      A blend of data engineering, analytics, research, leadership, and impactful community engagement.
-    </p>
-  </div>
-
-  <!-- ================= INDUSTRY EXPERIENCE — TIMELINE ================= -->
-  <div class="industry-section">
-    <h3 class="exp-heading">Industry Experience</h3>
-
-    <div class="timeline neon-timeline">
-
-     <!-- Hatica -->
-    <div class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
-        <h4>Customer Success Associate & Business Analyst — Hatica Labs</h4>
-        <span class="timeline-dates">Jan 2024 – Jun 2024 · Bangalore, India</span>
-        <ul>
-          <li>Led onboarding and adoption for an engineering analytics SaaS platform, supporting multiple enterprise teams and ensuring seamless integration.</li>
-          <li>Automated customer data ingestion workflows using Python, APIs, and internal pipelines, reducing manual processing and improving scalability.</li>
-          <li>Built usage dashboards and insights reports that helped CS and Product teams identify feature adoption patterns and renewal risks.</li>
-          <li>Collaborated with backend engineering on reliability improvements, debugging microservice behaviors, and optimizing data flows.</li>
-          <li>Acted as the primary technical liaison for customers, translating stakeholder needs into product enhancements and actionable requirements.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Brillio -->
-    <div class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
-        <h4>Project Trainee — Brillio</h4>
-        <span class="timeline-dates">Jun 2023 – Sep 2023 · Bangalore, India</span>
-        <ul>
-          <li>Engineered end-to-end ML pipelines for sales forecasting using Python, Pandas, Scikit-learn, and SQL, including cleaning, feature engineering, and evaluation.</li>
-          <li>Designed reusable ETL workflows and deployed them using Docker and CI/CD (GitHub Actions) to support automated model retraining.</li>
-          <li>Built dashboards and business intelligence reports highlighting KPIs, improving visibility into manufacturing and sales performance.</li>
-          <li>Conducted EDA to uncover patterns in customer behavior, sales cycles, and operational metrics to guide strategic decisions.</li>
-          <li>Contributed to workflow validation and continuous improvement initiatives for production data processes.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Idea Infinity -->
-    <div class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
-        <h4>Analyst Intern — Idea Infinity IT Solutions</h4>
-        <span class="timeline-dates">Mar 2023 – May 2023 · Bangalore, India</span>
-        <ul>
-          <li>Analyzed large-scale transaction data from Automated Teller Payment (ATP) systems to identify inefficiencies, anomalies, and workflow gaps.</li>
-          <li>Conducted UAT, functional testing, and system validation to ensure compliance with financial and operational standards.</li>
-          <li>Collaborated with product teams to convert business requirements into technical specifications and optimized system performance.</li>
-          <li>Authored SOPs and documentation supporting deployment, maintenance, and regulatory adherence.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- DRDO -->
-    <div class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
-        <h4>Research Intern — DRDO (NLP Research)</h4>
-        <span class="timeline-dates">Aug 2022 – Nov 2022 · Bangalore, India</span>
-        <ul>
-          <li>Developed a multilingual speech-to-text model using BiLSTM sequence-to-sequence architecture, achieving 88%+ accuracy on evaluation datasets.</li>
-          <li>Processed and engineered features from 10k+ annotated audio-text samples using TensorFlow, NLTK, spaCy, and Python.</li>
-          <li>Designed preprocessing pipelines for text normalization, tokenization, and speech signal augmentation.</li>
-          <li>Produced research documentation, presented findings to scientists, and contributed to internal experiments.</li>
-        </ul>
-      </div>
-    </div>
-    </div>
-  </div>
-
-  <!-- ================= COMMUNITY EXPERIENCE — CARDS ================= -->
-  <div class="community-section">
-    <h3 class="exp-heading">Community & Leadership Experience</h3>
-
-    <div class="community-grid">
-
-      <!-- ASU NExT -->
-      <div class="community-card">
-        <h4>Community Connector — ASU Next Education Workforce</h4>
-        <span class="card-dates">Apr 2025 – Present · Mesa, Arizona</span>
-         <ul>
-        <p class="card-desc">
-        <li>Leading a pilot initiative to strengthen school–community partnerships through personalized learning support.</li>
+    <section id="projects">
+      <div class="section-header">
+        <div class="section-kicker">Projects</div>
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-sub">
+          A curated collection of data engineering, analytics, LLM, visualization, and research projects.
         </p>
-          <li>Designed outreach systems: volunteer recruitment, training, communication assets.</li>
-          <li>Coordinated classroom placements for reading, math, and tech assistance volunteers.</li>
-          <li>Built partnerships with nonprofits + sponsors to support school needs.</li>
-          <li>Created tracking processes for participation, feedback, and milestone reporting.</li>
-        </ul>
       </div>
 
-      <!-- Sahai NGO -->
-      <div class="community-card">
-        <h4>Events & PR Lead — Sahai Mental Health NGO</h4>
-        <span class="card-dates">Jun 2021 – Apr 2024 · Bangalore, India</span>
-        <ul>
-        <p class="card-desc">
-          <li>Led community outreach and mental health awareness initiatives for one of Bangalore’s active NGOs.</li>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-chip">Data Engineering · Analytics</div>
+          <h3 class="project-title">Enterprise Sales Data Pipeline & Insights Dashboard</h3>
+          <span class="project-meta">Jan 2025 – Jun 2025</span>
+          <ul class="project-desc">
+            <li>Built a Python–SQL ETL pipeline for ~1M sales records, enabling near real-time updates into PostgreSQL.</li>
+            <li>Engineered transformations for revenue trends, churn indicators, and product-level performance metrics.</li>
+            <li>Developed Tableau dashboards visualizing KPIs such as sales trends, churn risk, and customer segmentation.</li>
+          </ul>
+          <div class="project-tech">Tech: Python, SQL, PostgreSQL, Tableau, ChatGPT, Copilot</div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-chip">Healthcare · Visualization</div>
+          <h3 class="project-title">Diabetes Data Visualization Dashboard</h3>
+          <span class="project-meta">Jan 2025 – May 2025</span>
+          <ul class="project-desc">
+            <li>Created a Tableau dashboard analyzing 101K+ diabetes records from 130 hospitals across 10 years.</li>
+            <li>Visualized demographics, medication usage, readmission patterns, and healthcare utilization.</li>
+            <li>Cleaned and modeled clinical datasets using Tableau Prep to ensure high-quality analytics.</li>
+          </ul>
+          <div class="project-tech">Tech: Tableau, Tableau Prep, Excel</div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-chip">LLMs · Cloud · Automation</div>
+          <h3 class="project-title">AI-Powered IT Asset Management Chatbot</h3>
+          <span class="project-meta">Jan 2024 – Dec 2024</span>
+          <ul class="project-desc">
+            <li>Built a Retrieval-Augmented Generation (RAG) chatbot to automate IT asset queries, reducing manual lookup time by ~60%.</li>
+            <li>Developed a FastAPI backend orchestrating embeddings, vector search (Pinecone), and structured responses.</li>
+            <li>Deployed the system using Docker, AWS Lambda, and API Gateway for scalable serverless execution.</li>
+          </ul>
+          <div class="project-tech">Tech: Python, LangChain, FastAPI, Docker, AWS Lambda, API Gateway, OpenAI API, Pinecone</div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card">
+          <div class="project-chip">LLMs · Full-Stack</div>
+          <h3 class="project-title">AI Text Summarizer Web App</h3>
+          <span class="project-meta">May 2025 – Jun 2025</span>
+          <ul class="project-desc">
+            <li>Built a React + FastAPI summarization platform powered by the Hugging Face BART model.</li>
+            <li>Implemented customizable summary lengths, dark/light mode, history tracking, and export options.</li>
+            <li>Deployed frontend on Netlify and backend on Render for public access.</li>
+          </ul>
+          <div class="project-tech">Tech: React, Material-UI, FastAPI, Hugging Face BART, Netlify, Render</div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card">
+          <div class="project-chip">Research · Signal Processing</div>
+          <h3 class="project-title">EEG Cognitive Patterns Study</h3>
+          <span class="project-meta">Jan 2023 – Jul 2023</span>
+          <ul class="project-desc">
+            <li>Developed a Python package for EEG data ingestion, preprocessing, feature extraction, and PCA workflows.</li>
+            <li>Analyzed EEG signals from 30+ participants to compare meditators vs non-meditators.</li>
+            <li>Created brainwave visualizations using Matplotlib and Plotly to interpret cognitive differences.</li>
+          </ul>
+          <div class="project-tech">Tech: Python, NumPy, SciPy, MNE, Scikit-learn, Matplotlib, Plotly</div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project-card">
+          <div class="project-chip">NLP · Deep Learning</div>
+          <h3 class="project-title">English–Hindi Language Translation Model</h3>
+          <span class="project-meta">Jul 2022 – Dec 2022</span>
+          <ul class="project-desc">
+            <li>Developed a Seq2Seq LSTM translation model for English→Hindi neural machine translation.</li>
+            <li>Implemented tokenization, vocabulary building, and padded sequence generation for dataset preparation.</li>
+            <li>Validated model performance using evaluation sets and iterative training cycles.</li>
+          </ul>
+          <div class="project-tech">Tech: Python, TensorFlow/Keras, LSTM, NLP preprocessing</div>
+        </article>
+
+        <!-- Project 7 -->
+        <article class="project-card">
+          <div class="project-chip">Web App · EdTech</div>
+          <h3 class="project-title">Proctor–Student Management Portal</h3>
+          <span class="project-meta">Jan 2022 – May 2022</span>
+          <ul class="project-desc">
+            <li>Developed a full-stack portal for structured communication between students, proctors, and parents.</li>
+            <li>Implemented automated attendance alerts, centralized announcements, and student profile tracking.</li>
+            <li>Built responsive UI using React and managed backend logic with MongoDB.</li>
+          </ul>
+          <div class="project-tech">Tech: HTML, React, MongoDB</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+
+      <div class="section-header">
+        <div class="section-kicker">Experience</div>
+        <h2 class="section-title">Professional & Community Experience</h2>
+        <p class="section-sub">
+          A blend of data engineering, analytics, research, leadership, and impactful community engagement.
         </p>
-          <li>Organized 10+ awareness drives, webinars, and panel discussions.</li>
-          <li>Increased volunteer engagement & event participation by 30%.</li>
-          <li>Managed PR, content strategy & media communication for campaigns.</li>
-        </ul>
       </div>
 
-      <!-- Rotaract / Utsav -->
-      <div class="community-card">
-        <h4>Event & Outreach Coordinator — Rotaract Club & Utsav Fest</h4>
-        <span class="card-dates">Mar 2022 – Jun 2023 · Bangalore, India</span>
-        <ul>
-          <p class="card-desc">
-          <li>Directed logistics and community initiatives for student festivals & outreach programs.</li>
-        </p>
-          <li>Managed hospitality & volunteer operations for Utsav (20,000+ footfall event).</li>
-          <li>Led initiatives like iTeach, mental health drives & menstrual hygiene workshops.</li>
-          <li>Coordinated across technical, sponsorship & cultural teams for smooth execution.</li>
-          <li>Created leadership pathways for 100+ student volunteers.</li>
-        </ul>
+      <!-- INDUSTRY EXPERIENCE -->
+      <div class="industry-section">
+        <h3 class="exp-heading">Industry Experience</h3>
+
+        <div class="timeline neon-timeline">
+
+          <!-- Hatica -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>Customer Success Associate & Business Analyst — Hatica Labs</h4>
+              <span class="timeline-dates">Feb 2024 – Jun 2024 · Bangalore, India</span>
+              <ul>
+                <li>Led onboarding and adoption for an engineering analytics SaaS platform across multiple enterprise teams.</li>
+                <li>Automated customer data ingestion workflows using Python, APIs, and internal pipelines, reducing manual effort.</li>
+                <li>Built usage dashboards and insight reports that helped CS and Product teams identify feature adoption patterns and renewal risks.</li>
+                <li>Collaborated with backend engineers on reliability improvements, debugging microservices and optimizing data flows.</li>
+                <li>Acted as primary technical liaison, translating stakeholder needs into actionable product requirements.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Brillio -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>Project Trainee — Brillio</h4>
+              <span class="timeline-dates">Jun 2023 – Sep 2023 · Bangalore, India</span>
+              <ul>
+                <li>Engineered end-to-end ML pipelines for sales forecasting using Python, Pandas, Scikit-learn, and SQL.</li>
+                <li>Designed reusable ETL workflows and deployed them with Docker & GitHub Actions for automated retraining.</li>
+                <li>Built dashboards and BI reports highlighting KPIs for manufacturing and sales performance.</li>
+                <li>Conducted EDA to uncover customer behavior, sales cycle, and operational patterns for strategic decision-making.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Idea Infinity -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>Analyst Intern — Idea Infinity IT Solutions</h4>
+              <span class="timeline-dates">Mar 2023 – May 2023 · Bangalore, India</span>
+              <ul>
+                <li>Analyzed large-scale ATP transaction data to identify inefficiencies, anomalies, and workflow gaps.</li>
+                <li>Conducted UAT, functional testing, and system validation ensuring financial and operational compliance.</li>
+                <li>Collaborated with product teams to convert business requirements into optimized technical designs.</li>
+                <li>Authored SOPs and documentation supporting deployment, maintenance, and regulatory adherence.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- DRDO -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>Research Intern — DRDO (NLP Research)</h4>
+              <span class="timeline-dates">Aug 2022 – Nov 2022 · Bangalore, India</span>
+              <ul>
+                <li>Developed a multilingual BiLSTM Seq2Seq speech-to-text model achieving 88%+ accuracy on evaluation datasets.</li>
+                <li>Processed and engineered features from 10k+ annotated audio-text samples using TensorFlow, NLTK, and spaCy.</li>
+                <li>Designed preprocessing pipelines for text normalization, tokenization, and speech-signal augmentation.</li>
+                <li>Documented findings and presented results to DRDO scientists as part of internal research reporting.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
-    </div>
-  </div>
+      <!-- COMMUNITY EXPERIENCE -->
+      <div class="community-section">
+        <h3 class="exp-heading">Community & Leadership Experience</h3>
 
-</section>
+        <div class="community-grid">
+          <!-- ASU Next -->
+          <div class="community-card">
+            <h4>Community Connector — ASU Next Education Workforce</h4>
+            <span class="card-dates">Apr 2025 – Present · Mesa, Arizona</span>
+            <p class="card-desc">
+              Supporting a pilot initiative to strengthen school–community partnerships at Hermosa Vista Elementary.
+            </p>
+            <ul>
+              <li>Designed outreach systems for volunteer recruitment, training, and communication.</li>
+              <li>Coordinated classroom placements for reading, math, and tech assistance volunteers.</li>
+              <li>Built partnerships with nonprofits and sponsors to support school resource needs.</li>
+              <li>Created tracking processes for participation, feedback, and milestone reporting.</li>
+            </ul>
+          </div>
 
+          <!-- Sahai NGO -->
+          <div class="community-card">
+            <h4>Events & PR Lead — Sahai Mental Health NGO</h4>
+            <span class="card-dates">Jun 2021 – Apr 2024 · Bangalore, India</span>
+            <p class="card-desc">
+              Led outreach and mental health awareness campaigns for a Bangalore-based NGO.
+            </p>
+            <ul>
+              <li>Organized 10+ awareness drives, webinars, and panel discussions.</li>
+              <li>Increased volunteer engagement & event participation by ~30%.</li>
+              <li>Managed PR, content strategy, and media coordination for campaigns.</li>
+            </ul>
+          </div>
+
+          <!-- Rotaract / Utsav -->
+          <div class="community-card">
+            <h4>Event & Outreach Coordinator — Rotaract Club & Utsav Fest</h4>
+            <span class="card-dates">Mar 2022 – Jun 2023 · Bangalore, India</span>
+            <p class="card-desc">
+              Directed logistics, outreach, and service initiatives for student-led events and programs.
+            </p>
+            <ul>
+              <li>Managed hospitality & volunteer operations for Utsav, a 20,000+ footfall cultural fest.</li>
+              <li>Led initiatives like iTeach, mental health drives, and menstrual health workshops.</li>
+              <li>Coordinated across technical, sponsorship, and cultural teams for smooth execution.</li>
+              <li>Created leadership pathways for 100+ student volunteers.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- CONTACT -->
     <section id="contact">
