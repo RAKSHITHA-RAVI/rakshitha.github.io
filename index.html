@@ -637,6 +637,61 @@
       margin-bottom: 0.28rem;
     }
 
+ /* CERTIFICATIONS SECTION */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.cert-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+  transition: 0.2s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 35px rgba(56,189,248,0.25);
+}
+
+.cert-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: var(--text);
+}
+
+.cert-issuer {
+  font-size: 0.85rem;
+  color: var(--subtext);
+  display: block;
+}
+
+.cert-desc {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--subtext);
+  line-height: 1.4;
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .cert-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+    
     /* CONTACT --------------------------------------------------- */
     .contact-grid {
       display: grid;
@@ -1185,6 +1240,69 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>, index=<span class=
         </div>
       </div>
     </section>
+
+    <section id="certifications">
+  <div class="section-header">
+    <div class="section-kicker">Certifications</div>
+    <h2 class="section-title">Certifications & Trainings</h2>
+    <p class="section-sub">
+      Professional certifications and technical training programs completed across data engineering, machine learning, cloud, and analytics.
+    </p>
+  </div>
+
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <h4>AWS Academy Graduate – Machine Learning Foundations</h4>
+      <span class="cert-issuer">Amazon Web Services · Issued Nov 2025</span>
+    </div>
+
+    <div class="cert-card">
+      <h4>AWS Academy Graduate – ML for Natural Language Processing</h4>
+      <span class="cert-issuer">Amazon Web Services · Issued Nov 2025</span>
+    </div>
+
+    <div class="cert-card">
+      <h4>AWS Academy Graduate – Data Engineering</h4>
+      <span class="cert-issuer">Amazon Web Services · Issued Sep 2025</span>
+    </div>
+
+    <div class="cert-card">
+      <h4>Google Data Analytics Professional Certificate</h4>
+      <span class="cert-issuer">Coursera · Issued Jun 2025</span>
+      <p class="cert-desc">
+        Data cleaning · SQL · R · Tableau · Spreadsheets · Dashboards · Data storytelling
+      </p>
+    </div>
+
+    <div class="cert-card">
+      <h4>Power BI Desktop for Business Intelligence</h4>
+      <span class="cert-issuer">Udemy · 2023</span>
+    </div>
+
+    <div class="cert-card">
+      <h4>Machine Learning (Stanford University — Andrew Ng)</h4>
+      <span class="cert-issuer">Coursera</span>
+    </div>
+
+    <div class="cert-card">
+      <h4>The Complete Oracle SQL Bootcamp</h4>
+      <span class="cert-issuer">Udemy · 2023</span>
+    </div>
+
+    <div class="cert-card">
+      <h4>Data Warehouse Fundamentals for Beginners</h4>
+      <span class="cert-issuer">Udemy</span>
+    </div>
+
+    <div class="cert-card">
+      <h4>Mastering Data Modeling Fundamentals</h4>
+      <span class="cert-issuer">Udemy</span>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- CONTACT -->
     <section id="contact">
