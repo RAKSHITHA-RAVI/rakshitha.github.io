@@ -429,32 +429,39 @@
     }
 
     /* SKILLS ---------------------------------------------------- */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
+   .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
 
-    .skill-card {
-      border-radius: 1rem;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      padding: 0.9rem 1rem;
-      font-size: 0.86rem;
-    }
+.skill-card {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+  transition: 0.2s ease;
+}
 
-    .skill-title {
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 28px rgba(56,189,248,0.25);
+}
 
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      color: var(--subtext);
-      font-size: 0.8rem;
-    }
+.skill-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+  color: var(--accent);
+}
+
+.skill-tags {
+  font-size: 0.85rem;
+  color: var(--subtext);
+  line-height: 1.45;
+}
 
     /* PROJECTS -------------------------------------------------- */
     .projects-grid {
@@ -869,56 +876,84 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>, index=<span class=
     </section>
 
     <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-header">
-        <div class="section-kicker">Skills</div>
-        <h2 class="section-title">Tech stack & strengths</h2>
-        <p class="section-sub">
-          I combine data engineering, analytics, and software fundamentals to
-          design reliable, maintainable data solutions.
-        </p>
-      </div>
+  <section id="skills">
+  <div class="section-header">
+    <div class="section-kicker">Skills</div>
+    <h2 class="section-title">Technical Skills & Core Strengths</h2>
+    <p class="section-sub">
+      A comprehensive skill set built through hands-on experience across data engineering, analytics, cloud, ML, and full-stack development.
+    </p>
+  </div>
 
-      <div class="skills-grid">
-        <article class="skill-card">
-          <div class="skill-title">Programming & Querying</div>
-          <div class="skill-tags">
-            Python · SQL · R · C++ · Java
-          </div>
-        </article>
-        <article class="skill-card">
-          <div class="skill-title">Data Engineering</div>
-          <div class="skill-tags">
-            ETL / ELT · PostgreSQL · Pandas · PySpark · Data Modeling
-          </div>
-        </article>
-        <article class="skill-card">
-          <div class="skill-title">Analytics & BI</div>
-          <div class="skill-tags">
-            Tableau · Power BI · EDA · KPI Design · Reporting
-          </div>
-        </article>
-        <article class="skill-card">
-          <div class="skill-title">Cloud & Platform</div>
-          <div class="skill-tags">
-            AWS Lambda · Docker · GitHub Actions · FastAPI · APIs
-          </div>
-        </article>
-        <article class="skill-card">
-          <div class="skill-title">Tools & Collaboration</div>
-          <div class="skill-tags">
-            Salesforce · Jira · Confluence · Notion · Airtable
-          </div>
-        </article>
-        <article class="skill-card">
-          <div class="skill-title">Soft Skills</div>
-          <div class="skill-tags">
-            Customer-facing communication · Stakeholder management · Teaching
-            & mentoring · Event & team leadership
-          </div>
-        </article>
+  <div class="skills-grid">
+
+    <!-- PROGRAMMING -->
+    <article class="skill-card">
+      <div class="skill-title">Programming & Scripting</div>
+      <div class="skill-tags">
+        Python · SQL · Java · C++ · R · JavaScript · Bash/Shell
       </div>
-    </section>
+    </article>
+
+    <!-- DATA ENGINEERING -->
+    <article class="skill-card">
+      <div class="skill-title">Data Engineering</div>
+      <div class="skill-tags">
+        ETL/ELT Pipelines · Data Modeling · Data Cleaning · PySpark · Pandas · NumPy · PostgreSQL · MongoDB · Pinecone (Vector DB) · Serverless Pipelines
+      </div>
+    </article>
+
+    <!-- MACHINE LEARNING -->
+    <article class="skill-card">
+      <div class="skill-title">Machine Learning & AI</div>
+      <div class="skill-tags">
+        Scikit-learn · TensorFlow/Keras · NLP (Seq2Seq, Tokenization, Preprocessing) · LLMs · RAG Pipelines · HuggingFace Models · Feature Engineering · Model Evaluation
+      </div>
+    </article>
+
+    <!-- ANALYTICS & BI -->
+    <article class="skill-card">
+      <div class="skill-title">Analytics & BI</div>
+      <div class="skill-tags">
+        Tableau · Tableau Prep · Power BI · KPI Design · EDA · Data Visualization · Storytelling · Performance Metrics
+      </div>
+    </article>
+
+    <!-- CLOUD & DEVOPS -->
+    <article class="skill-card">
+      <div class="skill-title">Cloud & DevOps</div>
+      <div class="skill-tags">
+        AWS Lambda · API Gateway · Docker · FastAPI · REST APIs · CI/CD (GitHub Actions) · Netlify · Render · Serverless Architectures
+      </div>
+    </article>
+
+    <!-- AUTOMATION & TOOLS -->
+    <article class="skill-card">
+      <div class="skill-title">Automation, Tools & Platforms</div>
+      <div class="skill-tags">
+        Git & GitHub · Postman · Salesforce · Jira · Confluence · Notion · Airtable · VS Code · GitHub Copilot · ChatGPT
+      </div>
+    </article>
+
+    <!-- WEB DEVELOPMENT -->
+    <article class="skill-card">
+      <div class="skill-title">Web Development</div>
+      <div class="skill-tags">
+        React · HTML/CSS · Material UI · API Integration
+      </div>
+    </article>
+
+    <!-- SOFT SKILLS -->
+    <article class="skill-card">
+      <div class="skill-title">Soft Skills</div>
+      <div class="skill-tags">
+        Leadership · Stakeholder Management · Technical Communication · Documentation · Mentorship · Problem Solving · Team Collaboration
+      </div>
+    </article>
+
+  </div>
+</section>
+
 
     <!-- PROJECTS -->
     <section id="projects">
