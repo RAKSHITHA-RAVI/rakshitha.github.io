@@ -818,6 +818,44 @@
         align-items: flex-start;
       }
     }
+        .footer-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* RESPONSIVE ----------------------------------------------- */
+    @media (max-width: 900px) {
+      nav ul {
+        gap: 1rem;
+        font-size: 0.85rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .community-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
   </style>
 </head>
 
@@ -1295,7 +1333,7 @@ agg.to_csv(<span class="str">"clean/region_sales.csv"</span>, index=<span class=
 
 
 
-   <!-- CONTACT -->
+   
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header">
