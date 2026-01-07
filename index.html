@@ -1,155 +1,814 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <title>Rakshitha Bangalore Ravishankar | Data Engineer & Analyst</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Rakshitha Bangalore Ravishankar — Data Engineering, Analytics, ML & Cloud portfolio" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    :root{
+    :root {
       --bg: #020617;
-      --bg-card: rgba(15,23,42,0.9);
+      --bg-elevated: rgba(15, 23, 42, 0.85);
+      --bg-card: rgba(15, 23, 42, 0.9);
       --text: #f9fafb;
       --subtext: #9ca3af;
       --accent: #38bdf8;
-      --border: rgba(148,163,184,0.25);
+      --accent-soft: rgba(56, 189, 248, 0.16);
+      --border: rgba(148, 163, 184, 0.25);
     }
 
-    *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
-    html,body{height:100%}
-    body{
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
       background:
-        radial-gradient(circle at top left,#0f172a 0,transparent 55%),
-        radial-gradient(circle at top right,#0b1120 0,transparent 55%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+        radial-gradient(circle at top left, #0f172a 0, transparent 55%),
+        radial-gradient(circle at top right, #0b1120 0, transparent 55%),
+        #020617;
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    a{color:inherit;text-decoration:none}
-    .container{width:92%;max-width:1120px;margin:0 auto;padding:5.5rem 0 4rem;}
-
-    /* NAV */
-    nav{position:fixed;left:0;right:0;top:0;padding:.75rem 0;background:linear-gradient(to bottom, rgba(15,23,42,0.95), rgba(15,23,42,0.75), transparent);backdrop-filter:blur(12px);border-bottom:1px solid rgba(30,64,175,0.45);z-index:60}
-    nav .inner{width:92%;max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    .brand{display:flex;align-items:center;gap:.6rem}
-    .brand-circle{width:34px;height:34px;border-radius:999px;border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;color:var(--accent);box-shadow:0 0 18px rgba(56,189,248,0.45);font-weight:600}
-    .brand-text{font-size:.9rem;color:var(--subtext);text-transform:uppercase;letter-spacing:.06em}
-    .brand-text span{color:var(--accent)}
-    nav ul{display:flex;gap:1.2rem;list-style:none;font-size:.9rem}
-    nav ul a{color:var(--subtext);position:relative;padding-bottom:.18rem}
-    nav ul a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);transition:width .18s ease}
-    nav ul a:hover{color:var(--text)}
-    nav ul a:hover::after{width:100%}
-
-    /* sections */
-    section{padding:4.5rem 0 0}
-    .section-header{margin-bottom:1.6rem}
-    .section-kicker{font-size:.78rem;text-transform:uppercase;color:var(--accent);letter-spacing:.14em;margin-bottom:.25rem}
-    .section-title{font-size:1.75rem;margin-bottom:.25rem}
-    .section-sub{font-size:.95rem;color:var(--subtext);max-width:52ch}
-
-    /* hero */
-    .hero-grid{display:grid;grid-template-columns:1.6fr 1.2fr;gap:2.25rem;align-items:center}
-    .hero-badge{display:inline-flex;gap:.5rem;padding:5px 10px;border-radius:999px;border:1px solid rgba(56,189,248,0.55);background:rgba(15,23,42,0.95);color:var(--accent);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em}
-    .hero-dot{width:9px;height:9px;border-radius:999px;background:#22c55e;box-shadow:0 0 8px rgba(34,197,94,0.85)}
-    .hero-title{font-size:2.4rem;line-height:1.15;margin:.9rem 0}
-    .hero-title span{color:var(--accent)}
-    .hero-text{color:var(--subtext);max-width:42ch;font-size:.98rem}
-    .hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.9rem 0 1.3rem}
-    .tag{padding:5px 10px;border-radius:999px;border:1px solid rgba(148,163,184,0.25);background:rgba(15,23,42,0.9);font-size:.78rem;color:var(--subtext)}
-
-    .hero-actions{display:flex;gap:.7rem;margin-bottom:1.1rem}
-    .btn{display:inline-flex;align-items:center;gap:.35rem;padding:.56rem 1.05rem;border-radius:999px;border:1px solid transparent;font-weight:600;cursor:pointer}
-    .btn-primary{background:radial-gradient(circle at top left,#38bdf8,#2563eb);color:#021025;box-shadow:0 0 20px rgba(56,189,248,0.7)}
-    .btn-ghost{background:rgba(15,23,42,0.92);border:1px solid rgba(148,163,184,0.18);color:var(--subtext)}
-
-    .hero-meta{display:flex;gap:1.5rem;color:var(--subtext);font-size:.82rem;margin-top:.6rem}
-    .hero-meta-item span{display:block;color:var(--accent);font-weight:600;font-size:.95rem}
-
-    .hero-right{position:relative}
-    .hero-photo-wrap{display:flex;justify-content:center;position:relative;margin-bottom:1rem}
-    .hero-photo-ring{position:absolute;width:210px;height:210px;border-radius:999px;border:1px solid rgba(56,189,248,0.35);box-shadow:0 0 30px rgba(56,189,248,0.25);inset:0;margin:auto}
-    .hero-photo{width:190px;height:190px;border-radius:999px;object-fit:cover;border:3px solid rgba(15,23,42,1);z-index:2;position:relative}
-    .hero-glow{position:absolute;width:260px;height:260px;border-radius:999px;background:radial-gradient(circle, rgba(56,189,248,0.35), transparent 60%);filter:blur(2px);top:6px;left:0;right:0;margin:auto;opacity:.85;z-index:0}
-
-    .hero-card{border-radius:1rem;background:linear-gradient(145deg, rgba(15,23,42,0.95), rgba(15,23,42,0.9));border:1px solid rgba(148,163,184,0.35);padding:1rem;font-size:.82rem}
-    .code{font-family:ui-monospace, SFMono-Regular, Menlo, monospace;background:rgba(15,23,42,1);border-radius:.7rem;padding:.6rem;border:1px solid rgba(30,64,175,0.6);overflow:auto}
-
-    /* skills */
-    .skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;margin-top:.6rem}
-    .skill-card{background:var(--bg-card);border-radius:1rem;padding:1.05rem;border:1px solid var(--border);box-shadow:0 6px 20px rgba(0,0,0,0.45);transition:all .18s ease}
-    .skill-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 30px rgba(56,189,248,0.12)}
-    .skill-title{font-weight:700;color:var(--accent);margin-bottom:.45rem}
-    .skill-tags{color:var(--subtext);font-size:.9rem;line-height:1.5}
-
-    /* projects (2-column) */
-    .projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;margin-top:.6rem}
-    .project-card{border-radius:1.05rem;border:1px solid rgba(148,163,184,0.35);background:linear-gradient(circle at top left, rgba(56,189,248,0.06), transparent 60%), var(--bg-card);padding:1rem;box-shadow:0 8px 28px rgba(0,0,0,0.45);transition:all .18s ease}
-    .project-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 18px 40px rgba(56,189,248,0.12)}
-    .project-chip{display:inline-block;padding:4px 9px;border-radius:999px;border:1px solid rgba(148,163,184,0.28);font-size:.78rem;color:var(--subtext);background:rgba(15,23,42,0.92);margin-bottom:.4rem}
-    .project-title{font-size:1.05rem;font-weight:700;margin-bottom:.15rem}
-    .project-meta{font-size:.84rem;color:var(--subtext);margin-bottom:.45rem}
-    .project-desc{color:var(--subtext);padding-left:1rem;margin-bottom:.35rem}
-    .project-desc li{margin-bottom:.35rem}
-    .project-tech{color:var(--accent);font-size:.82rem;margin-top:.35rem}
-
-    /* experience timeline */
-    .neon-timeline{border-left:2px solid var(--accent);padding-left:1.4rem}
-    .timeline-item{position:relative;margin-bottom:1.6rem}
-    .timeline-marker{width:12px;height:12px;border-radius:50%;background:var(--accent);position:absolute;left:-1.6rem;top:.35rem;box-shadow:0 0 12px var(--accent)}
-    .timeline-content h4{font-size:1rem;margin-bottom:.15rem}
-    .timeline-dates{font-size:.85rem;color:var(--subtext);margin-bottom:.5rem}
-    .timeline-content ul{color:var(--subtext);padding-left:1rem}
-    .timeline-content li{margin-bottom:.32rem}
-
-    /* community */
-    .community-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;margin-top:1rem}
-    .community-card{background:var(--bg-card);border-radius:1rem;padding:1rem;border:1px solid rgba(148,163,184,0.28);box-shadow:0 6px 24px rgba(0,0,0,0.32)}
-    .card-dates{font-size:.84rem;color:var(--subtext);margin-bottom:.45rem}
-    .card-desc{color:var(--subtext);margin-bottom:.45rem}
-
-    /* certifications badges */
-    .cert-badge-container{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
-    .cert-badge{padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:rgba(15,23,42,0.88);color:var(--subtext);font-size:.86rem;transition:all .15s ease}
-    .cert-badge.aws{color:#7dd3fc;border-color:rgba(56,189,248,0.35)}
-    .cert-badge.google{color:#86efac;border-color:rgba(74,222,128,0.28)}
-    .cert-badge.course{color:#d8b4fe;border-color:rgba(168,85,247,0.28)}
-    .cert-badge.udemy{color:#fda4af;border-color:rgba(244,63,94,0.2)}
-    .cert-badge:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(56,189,248,0.08)}
-
-    /* contact */
-    .contact-grid{display:grid;grid-template-columns:1.5fr 1.3fr;gap:1.4rem;margin-top:.8rem}
-    .contact-card{background:var(--bg-card);border-radius:1rem;padding:1rem;border:1px solid var(--border);color:var(--subtext)}
-    .contact-item span{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--subtext);margin-bottom:.25rem}
-    .contact-item a{color:var(--accent);font-size:.92rem}
-    .contact-message{margin-top:.8rem;color:var(--subtext)}
-
-    footer{border-top:1px solid rgba(30,64,175,0.45);padding:1.2rem 0;margin-top:2.5rem;color:var(--subtext)}
-    .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem}
-
-    /* responsive */
-    @media (max-width:900px){
-      .hero-grid{grid-template-columns:1fr}
-      .hero-right{order:-1}
-      .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .projects-grid{grid-template-columns:1fr}
-      .community-grid{grid-template-columns:1fr}
-      .contact-grid{grid-template-columns:1fr}
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    @media (max-width:640px){
-      .container{padding-top:4.2rem}
-      .hero-title{font-size:2.05rem}
-      nav ul{display:none}
-      .skills-grid{grid-template-columns:1fr}
+    .container {
+      width: 92%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-top: 4.5rem;
+      padding-bottom: 3rem;
+    }
+
+    /* NAVBAR ---------------------------------------------------- */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      padding: 0.75rem 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.7),
+        transparent
+      );
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(30, 64, 175, 0.5);
+      z-index: 50;
+    }
+
+    nav .inner {
+      width: 92%;
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--accent);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+    }
+
+    .brand-text {
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--subtext);
+    }
+
+    .brand-text span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    nav ul li a {
+      color: var(--subtext);
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover {
+      color: var(--text);
+    }
+
+    /* GENERIC SECTION STYLES ----------------------------------- */
+    section {
+      padding: 4.5rem 0 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--subtext);
+      max-width: 36rem;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.75rem;
+      color: var(--subtext);
+    }
+
+    /* HERO ------------------------------------------------------ */
+    #home {
+      padding-top: 5.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--accent);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-top: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      color: var(--subtext);
+      max-width: 35rem;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.3rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease,
+        border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #38bdf8, #2563eb);
+      color: #020617;
+      box-shadow: 0 0 26px rgba(56, 189, 248, 0.8);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--subtext);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      font-size: 0.82rem;
+      color: var(--subtext);
+    }
+
+    .hero-meta-item span {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* HERO RIGHT: PHOTO + CARD ---------------------------------- */
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-photo-ring {
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.4);
+      inset: 0;
+      margin: auto;
+    }
+
+    .hero-photo {
+      width: 190px;
+      height: 190px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 3px solid rgba(15, 23, 42, 1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: radial-gradient(
+        circle,
+        rgba(56, 189, 248, 0.35),
+        transparent 60%
+      );
+      filter: blur(2px);
+      top: 10px;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    .hero-card {
+      border-radius: 1rem;
+      background: linear-gradient(
+        145deg,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.9)
+      );
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+      padding: 1rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+      color: var(--subtext);
+    }
+
+    .hero-card-badge {
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 197, 94, 0.7);
+      color: #bbf7d0;
+      background: rgba(22, 163, 74, 0.14);
+      font-size: 0.68rem;
+    }
+
+    /* CODE BLOCK */
+    .code {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+        Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.78rem;
+      background: rgba(15, 23, 42, 1);
+      border-radius: 0.7rem;
+      padding: 0.65rem;
+      border: 1px solid rgba(30, 64, 175, 0.6);
+      overflow-x: auto;
+    }
+
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      color: var(--subtext);
+      margin-bottom: 0.4rem;
+    }
+
+    .code-dots {
+      display: flex;
+      gap: 0.2rem;
+    }
+
+    .code-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+    }
+
+    .code-dot.red {
+      background: #fb7185;
+    }
+
+    .code-dot.yellow {
+      background: #facc15;
+    }
+
+    .code-dot.green {
+      background: #4ade80;
+    }
+
+    .kw {
+      color: #60a5fa;
+    }
+
+    .str {
+      color: #facc15;
+    }
+
+    .comment {
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    /* SKILLS ---------------------------------------------------- */
+   .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.skill-card {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+  transition: 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 28px rgba(56,189,248,0.25);
+}
+
+.skill-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+  color: var(--accent);
+}
+
+.skill-tags {
+  font-size: 0.85rem;
+  color: var(--subtext);
+  line-height: 1.45;
+}
+
+    /* PROJECTS -------------------------------------------------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .project-card {
+      border-radius: 1.1rem;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: radial-gradient(
+          circle at top left,
+          rgba(56, 189, 248, 0.16),
+          transparent 60%
+        ),
+        var(--bg-card);
+      padding: 1rem 1.1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+      font-size: 0.86rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease,
+        border-color 0.2s ease;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 14px 35px rgba(56,189,248,0.3);
+    }
+
+    .project-chip {
+      display: inline-flex;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.75rem;
+      color: var(--subtext);
+      margin-bottom: 0.35rem;
+      background: rgba(15,23,42,0.9);
+    }
+
+    .project-title {
+      font-size: 1.05rem;
+      margin-bottom: 0.15rem;
+      font-weight: 600;
+    }
+
+    .project-meta {
+      font-size: 0.83rem;
+      color: var(--subtext);
+      margin-bottom: 0.45rem;
+    }
+
+    .project-desc {
+      margin: 0.5rem 0 0.6rem;
+      padding-left: 1rem;
+      color: var(--subtext);
+    }
+
+    .project-desc li {
+      margin-bottom: 0.3rem;
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
+    .project-tech {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-top: 0.3rem;
+    }
+
+    /* ------------ EXPERIENCE SECTION ------------ */
+    .exp-heading {
+      font-size: 1.35rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    /* TIMELINE (Industry Experience) */
+    .neon-timeline {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.5rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.8rem;
+    }
+
+    .timeline-marker {
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: absolute;
+      left: -1.6rem;
+      top: 0.35rem;
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .timeline-content h4 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-dates {
+      font-size: 0.85rem;
+      color: var(--subtext);
+    }
+
+    .timeline-content ul {
+      padding-left: 1rem;
+      margin-top: 0.4rem;
+      color: var(--subtext);
+    }
+
+    .timeline-content ul li {
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    /* COMMUNITY CARDS */
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .community-card {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+      transition: 0.2s ease;
+      font-size: 0.88rem;
+    }
+
+    .community-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 35px rgba(56,189,248,0.25);
+    }
+
+    .community-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .card-dates {
+      font-size: 0.84rem;
+      color: var(--subtext);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--subtext);
+      margin-bottom: 0.4rem;
+    }
+
+    .community-card ul {
+      padding-left: 1rem;
+      color: var(--subtext);
+      font-size: 0.86rem;
+    }
+
+    .community-card ul li {
+      margin-bottom: 0.28rem;
+    }
+
+/* CERTIFICATION BADGE SECTION */
+.cert-badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.cert-badge {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.85);
+  color: var(--subtext);
+  transition: 0.2s ease;
+  box-shadow: 0 0 14px rgba(0,0,0,0.4);
+}
+
+/* Hover Neon Glow */
+.cert-badge:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Category Color Variants */
+.cert-badge.aws {
+  border-color: rgba(56,189,248,0.4);
+  color: #7dd3fc;
+}
+
+.cert-badge.google {
+  border-color: rgba(74,222,128,0.4);
+  color: #86efac;
+}
+
+.cert-badge.course {
+  border-color: rgba(168,85,247,0.4);
+  color: #d8b4fe;
+}
+
+.cert-badge.udemy {
+  border-color: rgba(244,63,94,0.4);
+  color: #fda4af;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .cert-badge {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+  }
+}
+
+    
+    /* CONTACT --------------------------------------------------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.3fr);
+      gap: 1.4rem;
+    }
+
+    .contact-card {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      padding: 1rem;
+      font-size: 0.88rem;
+      color: var(--subtext);
+    }
+
+    .contact-item {
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-item span {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--subtext);
+    }
+
+    .contact-item a {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.6);
+      padding: 1.2rem 0 1.8rem;
+      margin-top: 3rem;
+      font-size: 0.78rem;
+      color: var(--subtext);
+    }
+
+    .footer-inner {
+      width: 92%;
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* RESPONSIVE ----------------------------------------------- */
+    @media (max-width: 900px) {
+      nav ul {
+        gap: 1rem;
+        font-size: 0.85rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .community-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: 92%;
+        padding-top: 4.2rem;
+      }
+      .hero-title {
+        font-size: 2.1rem;
+      }
+      section {
+        padding-top: 3.8rem;
+      }
+      nav .inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
+
 <body>
+  <!-- NAVBAR -->
   <nav>
     <div class="inner">
       <div class="brand">
@@ -168,63 +827,105 @@
 
   <main class="container">
     <!-- HERO -->
-    <section id="home" aria-labelledby="home-heading">
+    <section id="home">
       <div class="hero-grid">
+        <!-- LEFT -->
         <div>
-          <div class="hero-badge"><span class="hero-dot" aria-hidden="true"></span>Open to internships & new-grad roles · May 2026</div>
-          <h1 class="hero-title" id="home-heading">Hi, I’m <span>Rakshitha</span> 👋<br> I build <span>scalable data pipelines</span>, cloud-native systems & analytics platforms.</h1>
-          <p class="hero-text">Master’s student in Information Technology at Arizona State University. I focus on data engineering, analytics, and cloud platforms — turning messy data into reliable, analytics-ready assets and production-ready systems.</p>
+          <div class="hero-badge">
+            <span class="hero-dot"></span>
+            Open to internships & new grad roles · May 2026
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I’m <span>Rakshitha</span> 👋<br />
+            I build <span>scalable data pipelines</span>,<br />
+            cloud-native systems & analytics platforms.
+          </h1>
+
+          <p class="hero-text">
+            Master’s student in Information Technology at Arizona State
+            University, focusing on data engineering, analytics, and cloud
+            platforms. I enjoy turning messy data into reliable, analytics-ready
+            assets and building end-to-end solutions that help teams make
+            confident, data-driven decisions.
+          </p>
 
           <div class="hero-chips">
             <span class="tag">Data Engineering</span>
-            <span class="tag">ETL / ELT</span>
+            <span class="tag">ETL / ELT Pipelines</span>
             <span class="tag">Python · SQL · PySpark</span>
             <span class="tag">Tableau · Power BI</span>
-            <span class="tag">AWS · Docker · Serverless</span>
+            <span class="tag">AWS Lambda · Docker</span>
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn-ghost" href="YOUR_RESUME_LINK_HERE" target="_blank" rel="noopener">View Resume</a>
-            <a class="btn btn-ghost" href="#projects">View Projects</a>
+            <a
+              href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/"
+              target="_blank"
+              class="btn btn-primary"
+            >LinkedIn</a>
+
+            <a
+              href="YOUR_RESUME_LINK_HERE"
+              target="_blank"
+              class="btn btn-ghost"
+            >View Resume</a>
+
+            <a href="#projects" class="btn btn-ghost">View Projects</a>
           </div>
 
           <div class="hero-meta">
-            <div class="hero-meta-item"><span>ASU</span>M.S. Information Technology · 4.0 GPA</div>
-            <div class="hero-meta-item"><span>Focus</span>Data Engineering · Analytics · Architecture</div>
-            <div class="hero-meta-item"><span>Certified</span>Google Data Analytics (Coursera)</div>
+            <div class="hero-meta-item">
+              <span>ASU</span>
+              M.S. Information Technology · 4.0 GPA
+            </div>
+            <div class="hero-meta-item">
+              <span>Focus</span>
+              Data Engineering · Analytics · Architecture
+            </div>
+            <div class="hero-meta-item">
+              <span>Certified</span>
+              Google Data Analytics (Coursera)
+            </div>
           </div>
         </div>
 
-        <div class="hero-right" aria-hidden="false">
+        <!-- RIGHT -->
+        <div class="hero-right">
           <div class="hero-photo-wrap">
             <div class="hero-glow"></div>
             <div class="hero-photo-ring"></div>
-            <img class="hero-photo" src="assets/img.jpg" alt="Rakshitha Bangalore Ravishankar photo" />
+            <img src="assets/img.jpg" alt="Rakshitha Photo" class="hero-photo" />
           </div>
 
-          <div class="hero-card" aria-hidden="false">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;color:var(--subtext)">
+          <div class="hero-card">
+            <div class="hero-card-header">
               <span>etl_pipeline.py</span>
-              <span style="font-size:.72rem;background:rgba(22,163,74,0.08);padding:3px 8px;border-radius:999px;border:1px solid rgba(34,197,94,0.12);color:#bbf7d0">Pipeline · dev</span>
+              <span class="hero-card-badge">Pipeline · dev</span>
             </div>
-            <div class="code" aria-hidden="true">
-<pre><span style="color:#6b7280; font-style:italic"># example: batch ETL for analytics</span>
-import pandas as pd
+            <div class="code">
+              <div class="code-header">
+                <div class="code-dots">
+                  <span class="code-dot red"></span>
+                  <span class="code-dot yellow"></span>
+                  <span class="code-dot green"></span>
+                </div>
+                <span>sales_etl()</span>
+              </div>
+              <pre><span class="comment"># example: batch ETL for analytics</span>
+<span class="kw">import</span> pandas <span class="kw">as</span> pd
 
-df = pd.read_csv("sales_raw.csv")
-df = df.drop_duplicates("order_id")
+df = pd.read_csv(<span class="str">"sales_raw.csv"</span>)
+df = df.drop_duplicates(<span class="str">"order_id"</span>)
 
-df["order_date"] = pd.to_datetime(df["order_date"])
-df = df[df.order_date >= "2024-01-01"]
+df[<span class="str">"order_date"</span>] = pd.to_datetime(df[<span class="str">"order_date"</span>])
+df = df[df.order_date &gt;= <span class="str">"2024-01-01"</span>]
 
-agg = (
-  df.groupby("region")
-    .sales_amount.sum()
-    .reset_index()
-)
+agg = (df.groupby(<span class="str">"region"</span>)
+         .sales_amount.sum()
+         .reset_index())
 
-agg.to_csv("clean/region_sales.csv", index=False)</pre>
+agg.to_csv(<span class="str">"clean/region_sales.csv"</span>, index=<span class="kw">False</span>)</pre>
             </div>
           </div>
         </div>
@@ -232,305 +933,405 @@ agg.to_csv("clean/region_sales.csv", index=False)</pre>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" aria-labelledby="skills-heading">
-      <div class="section-header">
-        <h2 class="section-title" id="skills-heading">Skills</h2>
-        <p class="section-sub">A comprehensive skill set built through hands-on experience across data engineering, analytics, cloud, ML, and full-stack development.</p>
+  <section id="skills">
+  <div class="section-header">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-sub">
+      A comprehensive skill set built through hands-on experience across data engineering, analytics, cloud, ML, and full-stack development.
+    </p>
+  </div>
+
+  <div class="skills-grid">
+
+    <!-- PROGRAMMING -->
+    <article class="skill-card">
+      <div class="skill-title">Programming & Scripting</div>
+      <div class="skill-tags">
+        Python · SQL · Java · C++ · R · JavaScript · Bash/Shell
       </div>
+    </article>
 
-      <div class="skills-grid">
-        <article class="skill-card">
-          <div class="skill-title">Programming & Scripting</div>
-          <div class="skill-tags">Python · SQL · Java · C++ · R · JavaScript · Bash</div>
-        </article>
-
-        <article class="skill-card">
-          <div class="skill-title">Data Engineering</div>
-          <div class="skill-tags">ETL/ELT Pipelines · Data Modeling · PySpark · Pandas · NumPy · PostgreSQL · MongoDB · Pinecone (vector DB) · Serverless data flows</div>
-        </article>
-
-        <article class="skill-card">
-          <div class="skill-title">Machine Learning & AI</div>
-          <div class="skill-tags">Scikit-learn · TensorFlow/Keras · NLP (Seq2Seq, tokenization) · LLMs & RAG · Hugging Face · Feature engineering · Model evaluation</div>
-        </article>
-
-        <article class="skill-card">
-          <div class="skill-title">Analytics & BI</div>
-          <div class="skill-tags">Tableau · Tableau Prep · Power BI · EDA · KPI design · Data visualization · Reporting & storytelling</div>
-        </article>
-
-        <article class="skill-card">
-          <div class="skill-title">Cloud & DevOps</div>
-          <div class="skill-tags">AWS Lambda · API Gateway · Docker · FastAPI · REST APIs · CI/CD (GitHub Actions) · Netlify · Render</div>
-        </article>
-
-        <article class="skill-card">
-          <div class="skill-title">Tools & Collaboration</div>
-          <div class="skill-tags">Git/GitHub · Postman · Salesforce · Jira · Confluence · Notion · Airtable · GitHub Copilot · ChatGPT</div>
-        </article>
-
-        <article class="skill-card">
-          <div class="skill-title">Web & Full-Stack</div>
-          <div class="skill-tags">React · HTML/CSS · Material UI · API integration · Responsive UIs</div>
-        </article>
-
-        <article class="skill-card">
-          <div class="skill-title">Soft Skills</div>
-          <div class="skill-tags">Stakeholder management · Technical communication · Documentation · Mentorship · Leadership · Problem solving</div>
-        </article>
+    <!-- DATA ENGINEERING -->
+    <article class="skill-card">
+      <div class="skill-title">Data Engineering</div>
+      <div class="skill-tags">
+        ETL/ELT Pipelines · Data Modeling · Data Cleaning · PySpark · Pandas · NumPy · PostgreSQL · MongoDB · Pinecone (Vector DB) · Serverless Pipelines
       </div>
-    </section>
+    </article>
+
+    <!-- MACHINE LEARNING -->
+    <article class="skill-card">
+      <div class="skill-title">Machine Learning & AI</div>
+      <div class="skill-tags">
+        Scikit-learn · TensorFlow/Keras · NLP (Seq2Seq, Tokenization, Preprocessing) · LLMs · RAG Pipelines · HuggingFace Models · Feature Engineering · Model Evaluation
+      </div>
+    </article>
+
+    <!-- ANALYTICS & BI -->
+    <article class="skill-card">
+      <div class="skill-title">Analytics & BI</div>
+      <div class="skill-tags">
+        Tableau · Tableau Prep · Power BI · KPI Design · EDA · Data Visualization · Storytelling · Performance Metrics
+      </div>
+    </article>
+
+    <!-- CLOUD & DEVOPS -->
+    <article class="skill-card">
+      <div class="skill-title">Cloud & DevOps</div>
+      <div class="skill-tags">
+        AWS Lambda · API Gateway · Docker · FastAPI · REST APIs · CI/CD (GitHub Actions) · Netlify · Render · Serverless Architectures
+      </div>
+    </article>
+
+    <!-- AUTOMATION & TOOLS -->
+    <article class="skill-card">
+      <div class="skill-title">Automation, Tools & Platforms</div>
+      <div class="skill-tags">
+        Git & GitHub · Postman · Salesforce · Jira · Confluence · Notion · Airtable · VS Code · GitHub Copilot · ChatGPT
+      </div>
+    </article>
+
+    <!-- WEB DEVELOPMENT -->
+    <article class="skill-card">
+      <div class="skill-title">Web Development</div>
+      <div class="skill-tags">
+        React · HTML/CSS · Material UI · API Integration
+      </div>
+    </article>
+
+    <!-- SOFT SKILLS -->
+    <article class="skill-card">
+      <div class="skill-title">Soft Skills</div>
+      <div class="skill-tags">
+        Leadership · Stakeholder Management · Technical Communication · Documentation · Mentorship · Problem Solving · Team Collaboration
+      </div>
+    </article>
+
+  </div>
+</section>
+
 
     <!-- PROJECTS -->
-    <section id="projects" aria-labelledby="projects-heading">
+    <section id="projects">
       <div class="section-header">
-        <div class="section-kicker">Projects</div>
-        <h2 class="section-title" id="projects-heading">Selected Work</h2>
-        <p class="section-sub">Curated projects showcasing data engineering, analytics, LLMs, visualization, and research.</p>
+        <h2 class="section-kicker">Projects</h2>
+        <p class="section-sub">
+          A curated collection of data engineering, analytics, LLM, visualization, and research projects.
+        </p>
       </div>
 
       <div class="projects-grid">
+        <!-- Project 1 -->
         <article class="project-card">
           <div class="project-chip">Data Engineering · Analytics</div>
-          <div class="project-title">Enterprise Sales Data Pipeline & Insights Dashboard</div>
-          <div class="project-meta">Jan 2025 – Jun 2025</div>
+          <h3 class="project-title">Enterprise Sales Data Pipeline & Insights Dashboard</h3>
+          <span class="project-meta">Jan 2025 – Jun 2025</span>
           <ul class="project-desc">
             <li>Built a Python–SQL ETL pipeline for ~1M sales records, enabling near real-time updates into PostgreSQL.</li>
-            <li>Engineered transformations for revenue trends, churn signals, and product-level performance analytics.</li>
-            <li>Developed Tableau dashboards tracking KPIs (sales trends, churn, product performance).</li>
-            <li>Used Generative AI tools (ChatGPT, Copilot) to accelerate documentation and developer workflows.</li>
+            <li>Engineered transformations for revenue trends, churn indicators, and product-level performance metrics.</li>
+            <li>Developed Tableau dashboards visualizing KPIs such as sales trends, churn risk, and customer segmentation.</li>
           </ul>
-          <div class="project-tech">Tech: Python · SQL · PostgreSQL · Tableau · ChatGPT · Copilot</div>
+          <div class="project-tech">Tech: Python, SQL, PostgreSQL, Tableau, ChatGPT, Copilot</div>
         </article>
 
+        <!-- Project 2 -->
         <article class="project-card">
           <div class="project-chip">Healthcare · Visualization</div>
-          <div class="project-title">Diabetes Data Visualization Dashboard</div>
-          <div class="project-meta">Jan 2025 – May 2025</div>
+          <h3 class="project-title">Diabetes Data Visualization Dashboard</h3>
+          <span class="project-meta">Jan 2025 – May 2025</span>
           <ul class="project-desc">
-            <li>Designed a Tableau dashboard over 101K+ diabetes records from 130 hospitals across 10 years.</li>
-            <li>Visualized demographics, medication trends, readmission risks, and utilization for clinical & operational stakeholders.</li>
-            <li>Prepared and modeled data with Tableau Prep to ensure accurate KPI reporting.</li>
+            <li>Created a Tableau dashboard analyzing 101K+ diabetes records from 130 hospitals across 10 years.</li>
+            <li>Visualized demographics, medication usage, readmission patterns, and healthcare utilization.</li>
+            <li>Cleaned and modeled clinical datasets using Tableau Prep to ensure high-quality analytics.</li>
           </ul>
-          <div class="project-tech">Tech: Tableau · Tableau Prep · Excel</div>
+          <div class="project-tech">Tech: Tableau, Tableau Prep, Excel</div>
         </article>
 
+        <!-- Project 3 -->
         <article class="project-card">
           <div class="project-chip">LLMs · Cloud · Automation</div>
-          <div class="project-title">AI-Powered IT Asset Management Chatbot</div>
-          <div class="project-meta">Jan 2024 – Dec 2024</div>
+          <h3 class="project-title">AI-Powered IT Asset Management Chatbot</h3>
+          <span class="project-meta">Jan 2024 – Dec 2024</span>
           <ul class="project-desc">
-            <li>Built a RAG-based chatbot answering IT asset queries, cutting manual lookup time by ~60%.</li>
-            <li>Implemented a FastAPI backend orchestrating embeddings, Pinecone vector search, and structured responses.</li>
-            <li>Deployed via Docker, AWS Lambda & API Gateway for a scalable serverless architecture.</li>
+            <li>Built a Retrieval-Augmented Generation (RAG) chatbot to automate IT asset queries, reducing manual lookup time by ~60%.</li>
+            <li>Developed a FastAPI backend orchestrating embeddings, vector search (Pinecone), and structured responses.</li>
+            <li>Deployed the system using Docker, AWS Lambda, and API Gateway for scalable serverless execution.</li>
           </ul>
-          <div class="project-tech">Tech: Python · LangChain · FastAPI · Docker · AWS Lambda · Pinecone · OpenAI API</div>
+          <div class="project-tech">Tech: Python, LangChain, FastAPI, Docker, AWS Lambda, API Gateway, OpenAI API, Pinecone</div>
         </article>
 
+        <!-- Project 4 -->
         <article class="project-card">
           <div class="project-chip">LLMs · Full-Stack</div>
-          <div class="project-title">AI Text Summarizer Web App</div>
-          <div class="project-meta">May 2025 – Jun 2025</div>
+          <h3 class="project-title">AI Text Summarizer Web App</h3>
+          <span class="project-meta">May 2025 – Jun 2025</span>
           <ul class="project-desc">
-            <li>Built a React + FastAPI summarization app powered by Hugging Face BART with configurable summary lengths.</li>
-            <li>Added UX features: dark/light mode, history, word count, and export/copy options.</li>
+            <li>Built a React + FastAPI summarization platform powered by the Hugging Face BART model.</li>
+            <li>Implemented customizable summary lengths, dark/light mode, history tracking, and export options.</li>
             <li>Deployed frontend on Netlify and backend on Render for public access.</li>
           </ul>
-          <div class="project-tech">Tech: React · Material UI · FastAPI · Hugging Face · Netlify · Render</div>
+          <div class="project-tech">Tech: React, Material-UI, FastAPI, Hugging Face BART, Netlify, Render</div>
         </article>
 
+        <!-- Project 5 -->
         <article class="project-card">
           <div class="project-chip">Research · Signal Processing</div>
-          <div class="project-title">EEG Cognitive Patterns Study</div>
-          <div class="project-meta">Jan 2023 – Jul 2023</div>
+          <h3 class="project-title">EEG Cognitive Patterns Study</h3>
+          <span class="project-meta">Jan 2023 – Jul 2023</span>
           <ul class="project-desc">
-            <li>Developed a Python package for EEG ingestion, preprocessing, feature extraction, PCA reduction, and visualization.</li>
-            <li>Analyzed EEG from 30+ participants to study cognitive differences between meditators and non-meditators.</li>
-            <li>Produced visualizations in Matplotlib & Plotly to interpret brainwave patterns and differences.</li>
+            <li>Developed a Python package for EEG data ingestion, preprocessing, feature extraction, and PCA workflows.</li>
+            <li>Analyzed EEG signals from 30+ participants to compare meditators vs non-meditators.</li>
+            <li>Created brainwave visualizations using Matplotlib and Plotly to interpret cognitive differences.</li>
           </ul>
-          <div class="project-tech">Tech: Python · MNE · NumPy · SciPy · Scikit-learn · Plotly</div>
+          <div class="project-tech">Tech: Python, NumPy, SciPy, MNE, Scikit-learn, Matplotlib, Plotly</div>
         </article>
 
+        <!-- Project 6 -->
         <article class="project-card">
           <div class="project-chip">NLP · Deep Learning</div>
-          <div class="project-title">English–Hindi Language Translation Model</div>
-          <div class="project-meta">Jul 2022 – Dec 2022</div>
+          <h3 class="project-title">English–Hindi Language Translation Model</h3>
+          <span class="project-meta">Jul 2022 – Dec 2022</span>
           <ul class="project-desc">
-            <li>Built a Seq2Seq LSTM model for English → Hindi translation with tokenization, vocab building, and padded sequences.</li>
-            <li>Iteratively trained and validated model performance on held-out sets and improved preprocessing pipelines.</li>
+            <li>Developed a Seq2Seq LSTM translation model for English→Hindi neural machine translation.</li>
+            <li>Implemented tokenization, vocabulary building, and padded sequence generation for dataset preparation.</li>
+            <li>Validated model performance using evaluation sets and iterative training cycles.</li>
           </ul>
-          <div class="project-tech">Tech: TensorFlow/Keras · LSTM · NLP preprocessing</div>
+          <div class="project-tech">Tech: Python, TensorFlow/Keras, LSTM, NLP preprocessing</div>
         </article>
 
+        <!-- Project 7 -->
         <article class="project-card">
           <div class="project-chip">Web App · EdTech</div>
-          <div class="project-title">Proctor–Student Management Portal</div>
-          <div class="project-meta">Jan 2022 – May 2022</div>
+          <h3 class="project-title">Proctor–Student Management Portal</h3>
+          <span class="project-meta">Jan 2022 – May 2022</span>
           <ul class="project-desc">
-            <li>Developed a full-stack platform for student data management, automated attendance alerts, and unified announcements.</li>
-            <li>Built responsive front-end with React and backend persistence with MongoDB.</li>
+            <li>Developed a full-stack portal for structured communication between students, proctors, and parents.</li>
+            <li>Implemented automated attendance alerts, centralized announcements, and student profile tracking.</li>
+            <li>Built responsive UI using React and managed backend logic with MongoDB.</li>
           </ul>
-          <div class="project-tech">Tech: React · HTML/CSS · MongoDB</div>
+          <div class="project-tech">Tech: HTML, React, MongoDB</div>
         </article>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" aria-labelledby="experience-heading">
+    <section id="experience">
+
       <div class="section-header">
-        <h2 class="section-title" id="experience-heading">Experience</h2>
+        
+        <h2 class="section-title">Experience</h2>
       </div>
 
+      <!-- INDUSTRY EXPERIENCE -->
       <div class="industry-section">
         <h3 class="exp-heading">Industry Experience</h3>
-        <div class="neon-timeline">
+
+        <div class="timeline neon-timeline">
+
+          <!-- Hatica -->
           <div class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-marker"></div>
             <div class="timeline-content">
               <h4>Customer Success Associate & Business Analyst — Hatica Labs</h4>
-              <div class="timeline-dates">Feb 2024 – Jun 2024 · Bangalore, India</div>
+              <span class="timeline-dates">Feb 2024 – Jun 2024 · Bangalore, India</span>
               <ul>
                 <li>Led onboarding and adoption for an engineering analytics SaaS platform across multiple enterprise teams.</li>
                 <li>Automated customer data ingestion workflows using Python, APIs, and internal pipelines, reducing manual effort.</li>
-                <li>Built usage dashboards and insight reports to identify feature adoption patterns and renewal risks.</li>
-                <li>Collaborated with backend engineers on reliability improvements and data-flow optimizations.</li>
-                <li>Acted as the primary technical liaison, translating stakeholder needs into product requirements.</li>
+                <li>Built usage dashboards and insight reports that helped CS and Product teams identify feature adoption patterns and renewal risks.</li>
+                <li>Collaborated with backend engineers on reliability improvements, debugging microservices and optimizing data flows.</li>
+                <li>Acted as primary technical liaison, translating stakeholder needs into actionable product requirements.</li>
               </ul>
             </div>
           </div>
 
+          <!-- Brillio -->
           <div class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-marker"></div>
             <div class="timeline-content">
               <h4>Project Trainee — Brillio</h4>
-              <div class="timeline-dates">Jun 2023 – Sep 2023 · Bangalore, India</div>
+              <span class="timeline-dates">Jun 2023 – Sep 2023 · Bangalore, India</span>
               <ul>
-                <li>Engineered end-to-end ML pipelines for sales forecasting using Python, Pandas, Scikit-learn and SQL.</li>
+                <li>Engineered end-to-end ML pipelines for sales forecasting using Python, Pandas, Scikit-learn, and SQL.</li>
                 <li>Designed reusable ETL workflows and deployed them with Docker & GitHub Actions for automated retraining.</li>
                 <li>Built dashboards and BI reports highlighting KPIs for manufacturing and sales performance.</li>
+                <li>Conducted EDA to uncover customer behavior, sales cycle, and operational patterns for strategic decision-making.</li>
               </ul>
             </div>
           </div>
 
+          <!-- Idea Infinity -->
           <div class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-marker"></div>
             <div class="timeline-content">
               <h4>Analyst Intern — Idea Infinity IT Solutions</h4>
-              <div class="timeline-dates">Mar 2023 – May 2023 · Bangalore, India</div>
+              <span class="timeline-dates">Mar 2023 – May 2023 · Bangalore, India</span>
               <ul>
-                <li>Analyzed large-scale ATP transaction data to identify anomalies and workflow gaps.</li>
-                <li>Conducted UAT, system validation, and authored SOPs to support enterprise deployment.</li>
+                <li>Analyzed large-scale ATP transaction data to identify inefficiencies, anomalies, and workflow gaps.</li>
+                <li>Conducted UAT, functional testing, and system validation ensuring financial and operational compliance.</li>
+                <li>Collaborated with product teams to convert business requirements into optimized technical designs.</li>
+                <li>Authored SOPs and documentation supporting deployment, maintenance, and regulatory adherence.</li>
               </ul>
             </div>
           </div>
 
+          <!-- DRDO -->
           <div class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-marker"></div>
             <div class="timeline-content">
               <h4>Research Intern — DRDO (NLP Research)</h4>
-              <div class="timeline-dates">Aug 2022 – Nov 2022 · Bangalore, India</div>
+              <span class="timeline-dates">Aug 2022 – Nov 2022 · Bangalore, India</span>
               <ul>
-                <li>Built a multilingual BiLSTM Seq2Seq speech-to-text model achieving 88%+ accuracy on evaluation sets.</li>
-                <li>Processed 10k+ annotated audio-text samples and designed preprocessing & augmentation pipelines.</li>
+                <li>Developed a multilingual BiLSTM Seq2Seq speech-to-text model achieving 88%+ accuracy on evaluation datasets.</li>
+                <li>Processed and engineered features from 10k+ annotated audio-text samples using TensorFlow, NLTK, and spaCy.</li>
+                <li>Designed preprocessing pipelines for text normalization, tokenization, and speech-signal augmentation.</li>
+                <li>Documented findings and presented results to DRDO scientists as part of internal research reporting.</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="community-section" style="margin-top:1.2rem">
-        <h3 class="exp-heading">Community & Leadership</h3>
+      <!-- COMMUNITY EXPERIENCE -->
+      <div class="community-section">
+        <h3 class="exp-heading">Community & Leadership Experience</h3>
+
         <div class="community-grid">
+          <!-- ASU Next -->
           <div class="community-card">
             <h4>Community Connector — ASU Next Education Workforce</h4>
-            <div class="card-dates">Apr 2025 – Present · Mesa, AZ</div>
-            <p class="card-desc">Supporting a pilot initiative to strengthen school–community partnerships.</p>
+            <span class="card-dates">Apr 2025 – Present · Mesa, Arizona</span>
+            <p class="card-desc">
+              Supporting a pilot initiative to strengthen school–community partnerships at Hermosa Vista Elementary.
+            </p>
             <ul>
               <li>Designed outreach systems for volunteer recruitment, training, and communication.</li>
-              <li>Coordinated classroom placements and created tracking for participation & milestones.</li>
+              <li>Coordinated classroom placements for reading, math, and tech assistance volunteers.</li>
+              <li>Built partnerships with nonprofits and sponsors to support school resource needs.</li>
+              <li>Created tracking processes for participation, feedback, and milestone reporting.</li>
             </ul>
           </div>
 
+          <!-- Sahai NGO -->
           <div class="community-card">
             <h4>Events & PR Lead — Sahai Mental Health NGO</h4>
-            <div class="card-dates">Jun 2021 – Apr 2024 · Bangalore, India</div>
-            <p class="card-desc">Led outreach, events, and PR for community mental-health initiatives.</p>
+            <span class="card-dates">Jun 2021 – Apr 2024 · Bangalore, India</span>
+            <p class="card-desc">
+              Led outreach and mental health awareness campaigns for a Bangalore-based NGO.
+            </p>
             <ul>
-              <li>Organized 10+ awareness drives and increased volunteer engagement by ~30%.</li>
+              <li>Organized 10+ awareness drives, webinars, and panel discussions.</li>
+              <li>Increased volunteer engagement & event participation by ~30%.</li>
+              <li>Managed PR, content strategy, and media coordination for campaigns.</li>
             </ul>
           </div>
 
+          <!-- Rotaract / Utsav -->
           <div class="community-card">
-            <h4>Event & Outreach Coordinator — Rotaract & Utsav Fest</h4>
-            <div class="card-dates">Mar 2022 – Jun 2023 · Bangalore, India</div>
-            <p class="card-desc">Directed logistics and volunteer operations for large student events.</p>
+            <h4>Event & Outreach Coordinator — Rotaract Club & Utsav Fest</h4>
+            <span class="card-dates">Mar 2022 – Jun 2023 · Bangalore, India</span>
+            <p class="card-desc">
+              Directed logistics, outreach, and service initiatives for student-led events and programs.
+            </p>
             <ul>
-              <li>Managed hospitality for a 20,000+ footfall event and led multiple outreach programs.</li>
+              <li>Managed hospitality & volunteer operations for Utsav, a 20,000+ footfall cultural fest.</li>
+              <li>Led initiatives like iTeach, mental health drives, and menstrual health workshops.</li>
+              <li>Coordinated across technical, sponsorship, and cultural teams for smooth execution.</li>
+              <li>Created leadership pathways for 100+ student volunteers.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" style="margin-top:1.2rem">
-      <div class="section-header">
-        <div class="section-kicker">Certifications</div>
-        <h2 class="section-title">Certifications & Trainings</h2>
-        <p class="section-sub">Verified credentials across cloud, ML, NLP, data engineering, analytics, and BI.</p>
-      </div>
+  <section id="certifications">
+  <div class="section-header">
+    <div class="section-kicker">Certifications</div>
+    <h2 class="section-title">Certifications & Trainings</h2>
+    <p class="section-sub">
+      Verified credentials across cloud, machine learning, NLP, data engineering, analytics, and business intelligence.
+    </p>
+  </div>
 
-      <div class="cert-badge-container">
-        <span class="cert-badge aws">AWS ML Foundations — Nov 2025</span>
-        <span class="cert-badge aws">AWS ML for NLP — Nov 2025</span>
-        <span class="cert-badge aws">AWS Data Engineering — Sep 2025</span>
-        <span class="cert-badge google">Google Data Analytics — Jun 2025</span>
-        <span class="cert-badge course">Stanford ML (Coursera)</span>
-        <span class="cert-badge udemy">Power BI Desktop (Udemy)</span>
-        <span class="cert-badge udemy">Oracle SQL Bootcamp (Udemy)</span>
-        <span class="cert-badge udemy">Data Warehouse Fundamentals (Udemy)</span>
-        <span class="cert-badge udemy">Mastering Data Modeling (Udemy)</span>
-      </div>
-    </section>
+  <div class="cert-badge-container">
+
+    <!-- AWS Certifications -->
+    <span class="cert-badge aws">AWS Machine Learning Foundations</span>
+    <span class="cert-badge aws">AWS ML for Natural Language Processing</span>
+    <span class="cert-badge aws">AWS Data Engineering</span>
+
+    <!-- Google -->
+    <span class="cert-badge google">Google Data Analytics Certificate</span>
+
+    <!-- Coursera -->
+    <span class="cert-badge course">Stanford ML (Andrew Ng)</span>
+
+    <!-- Udemy -->
+    <span class="cert-badge udemy">Power BI Desktop for BI</span>
+    <span class="cert-badge udemy">Oracle SQL Bootcamp</span>
+    <span class="cert-badge udemy">Data Warehouse Fundamentals</span>
+    <span class="cert-badge udemy">Mastering Data Modeling</span>
+
+  </div>
+</section>
+
+
 
     <!-- CONTACT -->
-    <section id="contact" style="margin-top:1.2rem">
-      <div class="section-header">
-        <div class="section-kicker">Contact</div>
-        <h2 class="section-title">Let's connect</h2>
-        <p class="section-sub">Thank you for taking the time to explore my work. If my experience seems like a fit for a role on your team, or you'd like to discuss collaboration, please do reach out — I'd be grateful to connect and learn more.</p>
+  <section id="contact">
+  <div class="section-header">
+    <div class="section-kicker">Contact</div>
+    <h2 class="section-title">Let’s Connect</h2>
+    <p class="section-sub">
+      Thank you for taking the time to explore my work. If you feel my experience aligns with an opportunity on your team, 
+      I’d be grateful for the chance to connect and learn more. Please feel free to reach out anytime.
+    </p>
+  </div>
+
+  <div class="contact-grid">
+
+    <!-- LEFT CONTACT CARD -->
+    <div class="contact-card">
+      <div class="contact-item">
+        <span>Email</span>
+        <a href="mailto:rbangal9@asu.edu">rbangal9@asu.edu</a>
       </div>
 
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-item">
-            <span>Email</span>
-            <a href="mailto:rbangal9@asu.edu">rbangal9@asu.edu</a>
-          </div>
-
-          <div class="contact-item">
-            <span>LinkedIn</span>
-            <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/" target="_blank" rel="noopener">linkedin.com/in/rakshitha-ravishankar-9b478a203/</a>
-          </div>
-
-          <div class="contact-item">
-            <span>GitHub</span>
-            <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener">github.com/YOUR_GITHUB_USERNAME</a>
-          </div>
-
-          <p class="contact-message">If you feel I might be a good match for an opening, or would like to discuss a project, please email me — I’d be glad to follow up and share more details.</p>
-        </div>
-
-        <div class="contact-card">
-          <div style="display:block;color:var(--subtext);letter-spacing:.08em;margin-bottom:.4rem;font-weight:700">NEXT STEPS</div>
-          <ul style="color:var(--subtext);padding-left:1rem">
-            <li>If my background fits, please email me with the role and team details.</li>
-            <li>Message me on LinkedIn — I’m open to short chats to explore fit.</li>
-            <li>I’ll happily provide project links, code samples, or a quick walkthrough on request.</li>
-          </ul>
-        </div>
+      <div class="contact-item">
+        <span>LinkedIn</span>
+        <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/" target="_blank">
+          linkedin.com/in/rakshitha-ravishankar-9b478a203/
+        </a>
       </div>
-    </section>
+
+      <div class="contact-item">
+        <span>GitHub</span>
+        <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">
+          github.com/YOUR_GITHUB_USERNAME
+        </a>
+      </div>
+
+      <p class="contact-message" style="margin-top: 0.8rem; color: var(--subtext);">
+        If you believe my background matches what you're looking for, or if you'd simply like to discuss data engineering, 
+        analytics, or cloud-related work, I’d be honored to connect.
+      </p>
+    </div>
+
+    <!-- RIGHT NEXT-STEPS CARD -->
+    <div class="contact-card">
+      <span class="contact-subheading" style="display:block; margin-bottom:0.6rem; color:var(--subtext); letter-spacing:0.1em;">
+        NEXT STEPS
+      </span>
+
+      <ul style="color: var(--subtext); padding-left:1rem; font-size:0.88rem;">
+        <li>If you think I'm a good match for a role, please feel free to email me.</li>
+        <li>You may also message me on LinkedIn — I’m always open to connecting.</li>
+        <li>I’d love the chance to talk about how I can contribute to your team.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
   </main>
 
   <footer>
@@ -538,10 +1339,1361 @@ agg.to_csv("clean/region_sales.csv", index=False)</pre>
       <div>© 2025 Rakshitha Bangalore Ravishankar · All rights reserved.</div>
       <div class="footer-links">
         <a href="#home">Top</a>
-        <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rakshitha Bangalore Ravishankar | Data Engineer & Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-elevated: rgba(15, 23, 42, 0.85);
+      --bg-card: rgba(15, 23, 42, 0.9);
+      --text: #f9fafb;
+      --subtext: #9ca3af;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.16);
+      --border: rgba(148, 163, 184, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, #0f172a 0, transparent 55%),
+        radial-gradient(circle at top right, #0b1120 0, transparent 55%),
+        #020617;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-top: 4.5rem;
+      padding-bottom: 3rem;
+    }
+
+    /* NAVBAR ---------------------------------------------------- */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      padding: 0.75rem 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.7),
+        transparent
+      );
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(30, 64, 175, 0.5);
+      z-index: 50;
+    }
+
+    nav .inner {
+      width: 92%;
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--accent);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+    }
+
+    .brand-text {
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--subtext);
+    }
+
+    .brand-text span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    nav ul li a {
+      color: var(--subtext);
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover {
+      color: var(--text);
+    }
+
+    /* GENERIC SECTION STYLES ----------------------------------- */
+    section {
+      padding: 4.5rem 0 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--subtext);
+      max-width: 36rem;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.75rem;
+      color: var(--subtext);
+    }
+
+    /* HERO ------------------------------------------------------ */
+    #home {
+      padding-top: 5.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--accent);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-top: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      color: var(--subtext);
+      max-width: 35rem;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.3rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease,
+        border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #38bdf8, #2563eb);
+      color: #020617;
+      box-shadow: 0 0 26px rgba(56, 189, 248, 0.8);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--subtext);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      font-size: 0.82rem;
+      color: var(--subtext);
+    }
+
+    .hero-meta-item span {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* HERO RIGHT: PHOTO + CARD ---------------------------------- */
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-photo-ring {
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.4);
+      inset: 0;
+      margin: auto;
+    }
+
+    .hero-photo {
+      width: 190px;
+      height: 190px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 3px solid rgba(15, 23, 42, 1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: radial-gradient(
+        circle,
+        rgba(56, 189, 248, 0.35),
+        transparent 60%
+      );
+      filter: blur(2px);
+      top: 10px;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    .hero-card {
+      border-radius: 1rem;
+      background: linear-gradient(
+        145deg,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.9)
+      );
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+      padding: 1rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+      color: var(--subtext);
+    }
+
+    .hero-card-badge {
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 197, 94, 0.7);
+      color: #bbf7d0;
+      background: rgba(22, 163, 74, 0.14);
+      font-size: 0.68rem;
+    }
+
+    /* CODE BLOCK */
+    .code {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+        Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.78rem;
+      background: rgba(15, 23, 42, 1);
+      border-radius: 0.7rem;
+      padding: 0.65rem;
+      border: 1px solid rgba(30, 64, 175, 0.6);
+      overflow-x: auto;
+    }
+
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      color: var(--subtext);
+      margin-bottom: 0.4rem;
+    }
+
+    .code-dots {
+      display: flex;
+      gap: 0.2rem;
+    }
+
+    .code-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+    }
+
+    .code-dot.red {
+      background: #fb7185;
+    }
+
+    .code-dot.yellow {
+      background: #facc15;
+    }
+
+    .code-dot.green {
+      background: #4ade80;
+    }
+
+    .kw {
+      color: #60a5fa;
+    }
+
+    .str {
+      color: #facc15;
+    }
+
+    .comment {
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    /* SKILLS ---------------------------------------------------- */
+   .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.skill-card {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+  transition: 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 28px rgba(56,189,248,0.25);
+}
+
+.skill-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+  color: var(--accent);
+}
+
+.skill-tags {
+  font-size: 0.85rem;
+  color: var(--subtext);
+  line-height: 1.45;
+}
+
+    /* PROJECTS -------------------------------------------------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .project-card {
+      border-radius: 1.1rem;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: radial-gradient(
+          circle at top left,
+          rgba(56, 189, 248, 0.16),
+          transparent 60%
+        ),
+        var(--bg-card);
+      padding: 1rem 1.1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+      font-size: 0.86rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease,
+        border-color 0.2s ease;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 14px 35px rgba(56,189,248,0.3);
+    }
+
+    .project-chip {
+      display: inline-flex;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.75rem;
+      color: var(--subtext);
+      margin-bottom: 0.35rem;
+      background: rgba(15,23,42,0.9);
+    }
+
+    .project-title {
+      font-size: 1.05rem;
+      margin-bottom: 0.15rem;
+      font-weight: 600;
+    }
+
+    .project-meta {
+      font-size: 0.83rem;
+      color: var(--subtext);
+      margin-bottom: 0.45rem;
+    }
+
+    .project-desc {
+      margin: 0.5rem 0 0.6rem;
+      padding-left: 1rem;
+      color: var(--subtext);
+    }
+
+    .project-desc li {
+      margin-bottom: 0.3rem;
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
+    .project-tech {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-top: 0.3rem;
+    }
+
+    /* ------------ EXPERIENCE SECTION ------------ */
+    .exp-heading {
+      font-size: 1.35rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    /* TIMELINE (Industry Experience) */
+    .neon-timeline {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.5rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.8rem;
+    }
+
+    .timeline-marker {
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: absolute;
+      left: -1.6rem;
+      top: 0.35rem;
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .timeline-content h4 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-dates {
+      font-size: 0.85rem;
+      color: var(--subtext);
+    }
+
+    .timeline-content ul {
+      padding-left: 1rem;
+      margin-top: 0.4rem;
+      color: var(--subtext);
+    }
+
+    .timeline-content ul li {
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    /* COMMUNITY CARDS */
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .community-card {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+      transition: 0.2s ease;
+      font-size: 0.88rem;
+    }
+
+    .community-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 35px rgba(56,189,248,0.25);
+    }
+
+    .community-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .card-dates {
+      font-size: 0.84rem;
+      color: var(--subtext);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--subtext);
+      margin-bottom: 0.4rem;
+    }
+
+    .community-card ul {
+      padding-left: 1rem;
+      color: var(--subtext);
+      font-size: 0.86rem;
+    }
+
+    .community-card ul li {
+      margin-bottom: 0.28rem;
+    }
+
+/* CERTIFICATION BADGE SECTION */
+.cert-badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.cert-badge {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.85);
+  color: var(--subtext);
+  transition: 0.2s ease;
+  box-shadow: 0 0 14px rgba(0,0,0,0.4);
+}
+
+/* Hover Neon Glow */
+.cert-badge:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Category Color Variants */
+.cert-badge.aws {
+  border-color: rgba(56,189,248,0.4);
+  color: #7dd3fc;
+}
+
+.cert-badge.google {
+  border-color: rgba(74,222,128,0.4);
+  color: #86efac;
+}
+
+.cert-badge.course {
+  border-color: rgba(168,85,247,0.4);
+  color: #d8b4fe;
+}
+
+.cert-badge.udemy {
+  border-color: rgba(244,63,94,0.4);
+  color: #fda4af;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .cert-badge {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+  }
+}
+
+    
+    /* CONTACT --------------------------------------------------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.3fr);
+      gap: 1.4rem;
+    }
+
+    .contact-card {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      padding: 1rem;
+      font-size: 0.88rem;
+      color: var(--subtext);
+    }
+
+    .contact-item {
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-item span {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--subtext);
+    }
+
+    .contact-item a {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.6);
+      padding: 1.2rem 0 1.8rem;
+      margin-top: 3rem;
+      font-size: 0.78rem;
+      color: var(--subtext);
+    }
+
+    .footer-inner {
+      width: 92%;
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* RESPONSIVE ----------------------------------------------- */
+    @media (max-width: 900px) {
+      nav ul {
+        gap: 1rem;
+        font-size: 0.85rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .community-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: 92%;
+        padding-top: 4.2rem;
+      }
+      .hero-title {
+        font-size: 2.1rem;
+      }
+      section {
+        padding-top: 3.8rem;
+      }
+      nav .inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="inner">
+      <div class="brand">
+        <div class="brand-circle">RR</div>
+        <div class="brand-text">Rakshitha Bangalore <span>Ravishankar</span></div>
+      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- HERO -->
+    <section id="home">
+      <div class="hero-grid">
+        <!-- LEFT -->
+        <div>
+          <div class="hero-badge">
+            <span class="hero-dot"></span>
+            Open to internships & new grad roles · May 2026
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I’m <span>Rakshitha</span> 👋<br />
+            I build <span>scalable data pipelines</span>,<br />
+            cloud-native systems & analytics platforms.
+          </h1>
+
+          <p class="hero-text">
+            Master’s student in Information Technology at Arizona State
+            University, focusing on data engineering, analytics, and cloud
+            platforms. I enjoy turning messy data into reliable, analytics-ready
+            assets and building end-to-end solutions that help teams make
+            confident, data-driven decisions.
+          </p>
+
+          <div class="hero-chips">
+            <span class="tag">Data Engineering</span>
+            <span class="tag">ETL / ELT Pipelines</span>
+            <span class="tag">Python · SQL · PySpark</span>
+            <span class="tag">Tableau · Power BI</span>
+            <span class="tag">AWS Lambda · Docker</span>
+          </div>
+
+          <div class="hero-actions">
+            <a
+              href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/"
+              target="_blank"
+              class="btn btn-primary"
+            >LinkedIn</a>
+
+            <a
+              href="YOUR_RESUME_LINK_HERE"
+              target="_blank"
+              class="btn btn-ghost"
+            >View Resume</a>
+
+            <a href="#projects" class="btn btn-ghost">View Projects</a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span>ASU</span>
+              M.S. Information Technology · 4.0 GPA
+            </div>
+            <div class="hero-meta-item">
+              <span>Focus</span>
+              Data Engineering · Analytics · Architecture
+            </div>
+            <div class="hero-meta-item">
+              <span>Certified</span>
+              Google Data Analytics (Coursera)
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="hero-right">
+          <div class="hero-photo-wrap">
+            <div class="hero-glow"></div>
+            <div class="hero-photo-ring"></div>
+            <img src="assets/img.jpg" alt="Rakshitha Photo" class="hero-photo" />
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span>etl_pipeline.py</span>
+              <span class="hero-card-badge">Pipeline · dev</span>
+            </div>
+            <div class="code">
+              <div class="code-header">
+                <div class="code-dots">
+                  <span class="code-dot red"></span>
+                  <span class="code-dot yellow"></span>
+                  <span class="code-dot green"></span>
+                </div>
+                <span>sales_etl()</span>
+              </div>
+              <pre><span class="comment"># example: batch ETL for analytics</span>
+<span class="kw">import</span> pandas <span class="kw">as</span> pd
+
+df = pd.read_csv(<span class="str">"sales_raw.csv"</span>)
+df = df.drop_duplicates(<span class="str">"order_id"</span>)
+
+df[<span class="str">"order_date"</span>] = pd.to_datetime(df[<span class="str">"order_date"</span>])
+df = df[df.order_date &gt;= <span class="str">"2024-01-01"</span>]
+
+agg = (df.groupby(<span class="str">"region"</span>)
+         .sales_amount.sum()
+         .reset_index())
+
+agg.to_csv(<span class="str">"clean/region_sales.csv"</span>, index=<span class="kw">False</span>)</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+  <section id="skills">
+  <div class="section-header">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-sub">
+      A comprehensive skill set built through hands-on experience across data engineering, analytics, cloud, ML, and full-stack development.
+    </p>
+  </div>
+
+  <div class="skills-grid">
+
+    <!-- PROGRAMMING -->
+    <article class="skill-card">
+      <div class="skill-title">Programming & Scripting</div>
+      <div class="skill-tags">
+        Python · SQL · Java · C++ · R · JavaScript · Bash/Shell
+      </div>
+    </article>
+
+    <!-- DATA ENGINEERING -->
+    <article class="skill-card">
+      <div class="skill-title">Data Engineering</div>
+      <div class="skill-tags">
+        ETL/ELT Pipelines · Data Modeling · Data Cleaning · PySpark · Pandas · NumPy · PostgreSQL · MongoDB · Pinecone (Vector DB) · Serverless Pipelines
+      </div>
+    </article>
+
+    <!-- MACHINE LEARNING -->
+    <article class="skill-card">
+      <div class="skill-title">Machine Learning & AI</div>
+      <div class="skill-tags">
+        Scikit-learn · TensorFlow/Keras · NLP (Seq2Seq, Tokenization, Preprocessing) · LLMs · RAG Pipelines · HuggingFace Models · Feature Engineering · Model Evaluation
+      </div>
+    </article>
+
+    <!-- ANALYTICS & BI -->
+    <article class="skill-card">
+      <div class="skill-title">Analytics & BI</div>
+      <div class="skill-tags">
+        Tableau · Tableau Prep · Power BI · KPI Design · EDA · Data Visualization · Storytelling · Performance Metrics
+      </div>
+    </article>
+
+    <!-- CLOUD & DEVOPS -->
+    <article class="skill-card">
+      <div class="skill-title">Cloud & DevOps</div>
+      <div class="skill-tags">
+        AWS Lambda · API Gateway · Docker · FastAPI · REST APIs · CI/CD (GitHub Actions) · Netlify · Render · Serverless Architectures
+      </div>
+    </article>
+
+    <!-- AUTOMATION & TOOLS -->
+    <article class="skill-card">
+      <div class="skill-title">Automation, Tools & Platforms</div>
+      <div class="skill-tags">
+        Git & GitHub · Postman · Salesforce · Jira · Confluence · Notion · Airtable · VS Code · GitHub Copilot · ChatGPT
+      </div>
+    </article>
+
+    <!-- WEB DEVELOPMENT -->
+    <article class="skill-card">
+      <div class="skill-title">Web Development</div>
+      <div class="skill-tags">
+        React · HTML/CSS · Material UI · API Integration
+      </div>
+    </article>
+
+    <!-- SOFT SKILLS -->
+    <article class="skill-card">
+      <div class="skill-title">Soft Skills</div>
+      <div class="skill-tags">
+        Leadership · Stakeholder Management · Technical Communication · Documentation · Mentorship · Problem Solving · Team Collaboration
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-header">
+        <h2 class="section-kicker">Projects</h2>
+        <p class="section-sub">
+          A curated collection of data engineering, analytics, LLM, visualization, and research projects.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-chip">Data Engineering · Analytics</div>
+          <h3 class="project-title">Enterprise Sales Data Pipeline & Insights Dashboard</h3>
+          <span class="project-meta">Jan 2025 – Jun 2025</span>
+          <ul class="project-desc">
+            <li>Built a Python–SQL ETL pipeline for ~1M sales records, enabling near real-time updates into PostgreSQL.</li>
+            <li>Engineered transformations for revenue trends, churn indicators, and product-level performance metrics.</li>
+            <li>Developed Tableau dashboards visualizing KPIs such as sales trends, churn risk, and customer segmentation.</li>
+          </ul>
+          <div class="project-tech">Tech: Python, SQL, PostgreSQL, Tableau, ChatGPT, Copilot</div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-chip">Healthcare · Visualization</div>
+          <h3 class="project-title">Diabetes Data Visualization Dashboard</h3>
+          <span class="project-meta">Jan 2025 – May 2025</span>
+          <ul class="project-desc">
+            <li>Created a Tableau dashboard analyzing 101K+ diabetes records from 130 hospitals across 10 years.</li>
+            <li>Visualized demographics, medication usage, readmission patterns, and healthcare utilization.</li>
+            <li>Cleaned and modeled clinical datasets using Tableau Prep to ensure high-quality analytics.</li>
+          </ul>
+          <div class="project-tech">Tech: Tableau, Tableau Prep, Excel</div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-chip">LLMs · Cloud · Automation</div>
+          <h3 class="project-title">AI-Powered IT Asset Management Chatbot</h3>
+          <span class="project-meta">Jan 2024 – Dec 2024</span>
+          <ul class="project-desc">
+            <li>Built a Retrieval-Augmented Generation (RAG) chatbot to automate IT asset queries, reducing manual lookup time by ~60%.</li>
+            <li>Developed a FastAPI backend orchestrating embeddings, vector search (Pinecone), and structured responses.</li>
+            <li>Deployed the system using Docker, AWS Lambda, and API Gateway for scalable serverless execution.</li>
+          </ul>
+          <div class="project-tech">Tech: Python, LangChain, FastAPI, Docker, AWS Lambda, API Gateway, OpenAI API, Pinecone</div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card">
+          <div class="project-chip">LLMs · Full-Stack</div>
+          <h3 class="project-title">AI Text Summarizer Web App</h3>
+          <span class="project-meta">May 2025 – Jun 2025</span>
+          <ul class="project-desc">
+            <li>Built a React + FastAPI summarization platform powered by the Hugging Face BART model.</li>
+            <li>Implemented customizable summary lengths, dark/light mode, history tracking, and export options.</li>
+            <li>Deployed frontend on Netlify and backend on Render for public access.</li>
+          </ul>
+          <div class="project-tech">Tech: React, Material-UI, FastAPI, Hugging Face BART, Netlify, Render</div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card">
+          <div class="project-chip">Research · Signal Processing</div>
+          <h3 class="project-title">EEG Cognitive Patterns Study</h3>
+          <span class="project-meta">Jan 2023 – Jul 2023</span>
+          <ul class="project-desc">
+            <li>Developed a Python package for EEG data ingestion, preprocessing, feature extraction, and PCA workflows.</li>
+            <li>Analyzed EEG signals from 30+ participants to compare meditators vs non-meditators.</li>
+            <li>Created brainwave visualizations using Matplotlib and Plotly to interpret cognitive differences.</li>
+          </ul>
+          <div class="project-tech">Tech: Python, NumPy, SciPy, MNE, Scikit-learn, Matplotlib, Plotly</div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project-card">
+          <div class="project-chip">NLP · Deep Learning</div>
+          <h3 class="project-title">English–Hindi Language Translation Model</h3>
+          <span class="project-meta">Jul 2022 – Dec 2022</span>
+          <ul class="project-desc">
+            <li>Developed a Seq2Seq LSTM translation model for English→Hindi neural machine translation.</li>
+            <li>Implemented tokenization, vocabulary building, and padded sequence generation for dataset preparation.</li>
+            <li>Validated model performance using evaluation sets and iterative training cycles.</li>
+          </ul>
+          <div class="project-tech">Tech: Python, TensorFlow/Keras, LSTM, NLP preprocessing</div>
+        </article>
+
+        <!-- Project 7 -->
+        <article class="project-card">
+          <div class="project-chip">Web App · EdTech</div>
+          <h3 class="project-title">Proctor–Student Management Portal</h3>
+          <span class="project-meta">Jan 2022 – May 2022</span>
+          <ul class="project-desc">
+            <li>Developed a full-stack portal for structured communication between students, proctors, and parents.</li>
+            <li>Implemented automated attendance alerts, centralized announcements, and student profile tracking.</li>
+            <li>Built responsive UI using React and managed backend logic with MongoDB.</li>
+          </ul>
+          <div class="project-tech">Tech: HTML, React, MongoDB</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+
+      <div class="section-header">
+        
+        <h2 class="section-title">Experience</h2>
+      </div>
+
+      <!-- INDUSTRY EXPERIENCE -->
+      <div class="industry-section">
+        <h3 class="exp-heading">Industry Experience</h3>
+
+        <div class="timeline neon-timeline">
+
+          <!-- Hatica -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>Customer Success Associate & Business Analyst — Hatica Labs</h4>
+              <span class="timeline-dates">Feb 2024 – Jun 2024 · Bangalore, India</span>
+              <ul>
+                <li>Led onboarding and adoption for an engineering analytics SaaS platform across multiple enterprise teams.</li>
+                <li>Automated customer data ingestion workflows using Python, APIs, and internal pipelines, reducing manual effort.</li>
+                <li>Built usage dashboards and insight reports that helped CS and Product teams identify feature adoption patterns and renewal risks.</li>
+                <li>Collaborated with backend engineers on reliability improvements, debugging microservices and optimizing data flows.</li>
+                <li>Acted as primary technical liaison, translating stakeholder needs into actionable product requirements.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Brillio -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>Project Trainee — Brillio</h4>
+              <span class="timeline-dates">Jun 2023 – Sep 2023 · Bangalore, India</span>
+              <ul>
+                <li>Engineered end-to-end ML pipelines for sales forecasting using Python, Pandas, Scikit-learn, and SQL.</li>
+                <li>Designed reusable ETL workflows and deployed them with Docker & GitHub Actions for automated retraining.</li>
+                <li>Built dashboards and BI reports highlighting KPIs for manufacturing and sales performance.</li>
+                <li>Conducted EDA to uncover customer behavior, sales cycle, and operational patterns for strategic decision-making.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Idea Infinity -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>Analyst Intern — Idea Infinity IT Solutions</h4>
+              <span class="timeline-dates">Mar 2023 – May 2023 · Bangalore, India</span>
+              <ul>
+                <li>Analyzed large-scale ATP transaction data to identify inefficiencies, anomalies, and workflow gaps.</li>
+                <li>Conducted UAT, functional testing, and system validation ensuring financial and operational compliance.</li>
+                <li>Collaborated with product teams to convert business requirements into optimized technical designs.</li>
+                <li>Authored SOPs and documentation supporting deployment, maintenance, and regulatory adherence.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- DRDO -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>Research Intern — DRDO (NLP Research)</h4>
+              <span class="timeline-dates">Aug 2022 – Nov 2022 · Bangalore, India</span>
+              <ul>
+                <li>Developed a multilingual BiLSTM Seq2Seq speech-to-text model achieving 88%+ accuracy on evaluation datasets.</li>
+                <li>Processed and engineered features from 10k+ annotated audio-text samples using TensorFlow, NLTK, and spaCy.</li>
+                <li>Designed preprocessing pipelines for text normalization, tokenization, and speech-signal augmentation.</li>
+                <li>Documented findings and presented results to DRDO scientists as part of internal research reporting.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMUNITY EXPERIENCE -->
+      <div class="community-section">
+        <h3 class="exp-heading">Community & Leadership Experience</h3>
+
+        <div class="community-grid">
+          <!-- ASU Next -->
+          <div class="community-card">
+            <h4>Community Connector — ASU Next Education Workforce</h4>
+            <span class="card-dates">Apr 2025 – Present · Mesa, Arizona</span>
+            <p class="card-desc">
+              Supporting a pilot initiative to strengthen school–community partnerships at Hermosa Vista Elementary.
+            </p>
+            <ul>
+              <li>Designed outreach systems for volunteer recruitment, training, and communication.</li>
+              <li>Coordinated classroom placements for reading, math, and tech assistance volunteers.</li>
+              <li>Built partnerships with nonprofits and sponsors to support school resource needs.</li>
+              <li>Created tracking processes for participation, feedback, and milestone reporting.</li>
+            </ul>
+          </div>
+
+          <!-- Sahai NGO -->
+          <div class="community-card">
+            <h4>Events & PR Lead — Sahai Mental Health NGO</h4>
+            <span class="card-dates">Jun 2021 – Apr 2024 · Bangalore, India</span>
+            <p class="card-desc">
+              Led outreach and mental health awareness campaigns for a Bangalore-based NGO.
+            </p>
+            <ul>
+              <li>Organized 10+ awareness drives, webinars, and panel discussions.</li>
+              <li>Increased volunteer engagement & event participation by ~30%.</li>
+              <li>Managed PR, content strategy, and media coordination for campaigns.</li>
+            </ul>
+          </div>
+
+          <!-- Rotaract / Utsav -->
+          <div class="community-card">
+            <h4>Event & Outreach Coordinator — Rotaract Club & Utsav Fest</h4>
+            <span class="card-dates">Mar 2022 – Jun 2023 · Bangalore, India</span>
+            <p class="card-desc">
+              Directed logistics, outreach, and service initiatives for student-led events and programs.
+            </p>
+            <ul>
+              <li>Managed hospitality & volunteer operations for Utsav, a 20,000+ footfall cultural fest.</li>
+              <li>Led initiatives like iTeach, mental health drives, and menstrual health workshops.</li>
+              <li>Coordinated across technical, sponsorship, and cultural teams for smooth execution.</li>
+              <li>Created leadership pathways for 100+ student volunteers.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section id="certifications">
+  <div class="section-header">
+    <div class="section-kicker">Certifications</div>
+    <h2 class="section-title">Certifications & Trainings</h2>
+    <p class="section-sub">
+      Verified credentials across cloud, machine learning, NLP, data engineering, analytics, and business intelligence.
+    </p>
+  </div>
+
+  <div class="cert-badge-container">
+
+    <!-- AWS Certifications -->
+    <span class="cert-badge aws">AWS Machine Learning Foundations</span>
+    <span class="cert-badge aws">AWS ML for Natural Language Processing</span>
+    <span class="cert-badge aws">AWS Data Engineering</span>
+
+    <!-- Google -->
+    <span class="cert-badge google">Google Data Analytics Certificate</span>
+
+    <!-- Coursera -->
+    <span class="cert-badge course">Stanford ML (Andrew Ng)</span>
+
+    <!-- Udemy -->
+    <span class="cert-badge udemy">Power BI Desktop for BI</span>
+    <span class="cert-badge udemy">Oracle SQL Bootcamp</span>
+    <span class="cert-badge udemy">Data Warehouse Fundamentals</span>
+    <span class="cert-badge udemy">Mastering Data Modeling</span>
+
+  </div>
+</section>
+
+
+
+    <!-- CONTACT -->
+  <section id="contact">
+  <div class="section-header">
+    <div class="section-kicker">Contact</div>
+    <h2 class="section-title">Let’s Connect</h2>
+    <p class="section-sub">
+      Thank you for taking the time to explore my work. If you feel my experience aligns with an opportunity on your team, 
+      I’d be grateful for the chance to connect and learn more. Please feel free to reach out anytime.
+    </p>
+  </div>
+
+  <div class="contact-grid">
+
+    <!-- LEFT CONTACT CARD -->
+    <div class="contact-card">
+      <div class="contact-item">
+        <span>Email</span>
+        <a href="mailto:rbangal9@asu.edu">rbangal9@asu.edu</a>
+      </div>
+
+      <div class="contact-item">
+        <span>LinkedIn</span>
+        <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/" target="_blank">
+          linkedin.com/in/rakshitha-ravishankar-9b478a203/
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <span>GitHub</span>
+        <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">
+          github.com/YOUR_GITHUB_USERNAME
+        </a>
+      </div>
+
+      <p class="contact-message" style="margin-top: 0.8rem; color: var(--subtext);">
+        If you believe my background matches what you're looking for, or if you'd simply like to discuss data engineering, 
+        analytics, or cloud-related work, I’d be honored to connect.
+      </p>
+    </div>
+
+    <!-- RIGHT NEXT-STEPS CARD -->
+    <div class="contact-card">
+      <span class="contact-subheading" style="display:block; margin-bottom:0.6rem; color:var(--subtext); letter-spacing:0.1em;">
+        NEXT STEPS
+      </span>
+
+      <ul style="color: var(--subtext); padding-left:1rem; font-size:0.88rem;">
+        <li>If you think I'm a good match for a role, please feel free to email me.</li>
+        <li>You may also message me on LinkedIn — I’m always open to connecting.</li>
+        <li>I’d love the chance to talk about how I can contribute to your team.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 Rakshitha Bangalore Ravishankar · All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#home">Top</a>
+        <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/rakshitha-ravishankar-9b478a203/" target="_blank">LinkedIn</a>
       </div>
     </div>
   </footer>
 </body>
 </html>
+
+
+
+
