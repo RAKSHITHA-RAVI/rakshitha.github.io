@@ -1035,14 +1035,10 @@ footer::before {
                   <span class="code-dot yellow"></span>
                   <span class="code-dot green"></span>
                 </div>
-                <span>sales_etl()</span>
+                
               </div>
               <pre><span class="comment"># example:KPI analysis for business reporting</span>
 <span class="kw">import</span> pandas <span class="kw">as</span> pd
-
-
-
-
 df = pd.read_csv("sales_raw.csv")
 
 # basic preprocessing
@@ -1059,8 +1055,6 @@ kpi_summary = (
       )
       .reset_index()
 )
-
-
 kpi_summary.to_csv(<span class="str">"clean/sales_kpis.csv"</span>, index=<span class="kw">False</span>)</pre>
             </div>
           </div>
